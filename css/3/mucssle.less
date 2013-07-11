@@ -94,6 +94,8 @@
 				&.fifteen                 { width: @column * 15 + @gutter * 14 + (@gutter / 2); }
 				&.sixteen                 { width: @column * 16 + @gutter * 15 + (@gutter / 2); }
 			}
+			&.one-third.column            { width: ((@column+@gutter) * (@numcolumns - 1)) / 3 + (@gutter / 2); }
+		 	&.two-thirds.column           { width: ((((@column+@gutter) * (@numcolumns - 1)) / 3) * 2) + @gutter * 1; }
 		}
 		
 		.alpha.omega {
@@ -116,6 +118,8 @@
 				&.fifteen                 { width: @column * 15 + @gutter * 15; }
 				&.sixteen                 { width: @column * 16 + @gutter * 16; }
 			}
+			&.one-third.column            { width: ((@column+@gutter) * (@numcolumns - 1)) / 3 + @gutter * 1; }
+		 	&.two-thirds.column           { width: ((((@column+@gutter) * (@numcolumns - 1)) / 3) * 2) + @gutter * 2; }
 		}
 		
 		
@@ -175,14 +179,14 @@
 				&.fifteen,               
 				&.sixteen				{ width: 100%; }
 			}
-			.alpha, .omega {
+			.alpha, .omega, .alpha.omega {
 				&.column{
 			 		&.one-third,
 					&.two-thirds,
 					&.one				{ width:100%; }
 				}
 			}
-			.alpha, .omega {
+			.alpha, .omega, .alpha.omega {
 				&.columns{
 					&.two,                   
 					&.three,                 
