@@ -294,6 +294,14 @@ CONTENTS:
 .container .omega.columns.sixteen {
   width: 98.95833331750002%;
 }
+.container .alpha.one-third.column,
+.container .omega.one-third.column {
+  width: 32.2916666615%;
+}
+.container .alpha.two-thirds.column,
+.container .omega.two-thirds.column {
+  width: 64.583333323%;
+}
 .container .alpha.omega.one.column {
   width: 6.249999999%;
 }
@@ -341,6 +349,12 @@ CONTENTS:
 }
 .container .alpha.omega.columns.sixteen {
   width: 99.999999984%;
+}
+.container .alpha.omega.one-third.column {
+  width: 33.333333328%;
+}
+.container .alpha.omega.two-thirds.column {
+  width: 66.666666656%;
 }
 .container .offset-by-half {
   padding-left: 3.1249999995%;
@@ -429,42 +443,60 @@ CONTENTS:
   }
   .container .alpha.column.one-third,
   .container .omega.column.one-third,
+  .container .alpha.omega.column.one-third,
   .container .alpha.column.two-thirds,
   .container .omega.column.two-thirds,
+  .container .alpha.omega.column.two-thirds,
   .container .alpha.column.one,
-  .container .omega.column.one {
+  .container .omega.column.one,
+  .container .alpha.omega.column.one {
     width: 100%;
   }
   .container .alpha.columns.two,
   .container .omega.columns.two,
+  .container .alpha.omega.columns.two,
   .container .alpha.columns.three,
   .container .omega.columns.three,
+  .container .alpha.omega.columns.three,
   .container .alpha.columns.four,
   .container .omega.columns.four,
+  .container .alpha.omega.columns.four,
   .container .alpha.columns.five,
   .container .omega.columns.five,
+  .container .alpha.omega.columns.five,
   .container .alpha.columns.six,
   .container .omega.columns.six,
+  .container .alpha.omega.columns.six,
   .container .alpha.columns.seven,
   .container .omega.columns.seven,
+  .container .alpha.omega.columns.seven,
   .container .alpha.columns.eight,
   .container .omega.columns.eight,
+  .container .alpha.omega.columns.eight,
   .container .alpha.columns.nine,
   .container .omega.columns.nine,
+  .container .alpha.omega.columns.nine,
   .container .alpha.columns.ten,
   .container .omega.columns.ten,
+  .container .alpha.omega.columns.ten,
   .container .alpha.columns.eleven,
   .container .omega.columns.eleven,
+  .container .alpha.omega.columns.eleven,
   .container .alpha.columns.twelve,
   .container .omega.columns.twelve,
+  .container .alpha.omega.columns.twelve,
   .container .alpha.columns.thirteen,
   .container .omega.columns.thirteen,
+  .container .alpha.omega.columns.thirteen,
   .container .alpha.columns.fourteen,
   .container .omega.columns.fourteen,
+  .container .alpha.omega.columns.fourteen,
   .container .alpha.columns.fifteen,
   .container .omega.columns.fifteen,
+  .container .alpha.omega.columns.fifteen,
   .container .alpha.columns.sixteen,
-  .container .omega.columns.sixteen {
+  .container .omega.columns.sixteen,
+  .container .alpha.omega.columns.sixteen {
     width: 100%;
   }
   /* Offsets */
@@ -7530,11 +7562,11 @@ ul.menu ul {
 }
 .flexslider:hover .slideshow-next {
   opacity: 0.8;
-  right: 5px;
+  right: 15px;
 }
 .flexslider:hover .slideshow-prev {
   opacity: 0.8;
-  left: 5px;
+  left: 15px;
 }
 .flexslider:hover .slideshow-next:hover,
 .flexslider:hover .slideshow-prev:hover {
