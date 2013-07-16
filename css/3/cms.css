@@ -659,69 +659,75 @@ Copyright 2013 @mtrozzo & @thatericsmith
   float: none;
 }
 @media only screen and (min-width: 1025px) {
-  .bb-one-col,
-  .bb-two-col .bb-main-col {
+  .container.responsive .bb-one-col,
+  .container.responsive .bb-two-col .bb-main-col {
     font-size: 1.5em;
   }
 }
 @media only screen and (max-width: 767px) {
-  /* on 3 and 4 col, cols inside the main col should go to full width */
-  .bb-four-col {
+  .container.responsive {
+    /* on 3 and 4 col, cols inside the main col should go to full width */
+  
+  }
+  .container.responsive .bb-four-col {
     padding: 0 1%;
   }
-  .bb-four-col .bb-side-col {
+  .container.responsive .bb-four-col .bb-side-col {
     width: 22.7273%;
     margin-right: 4.5455%;
   }
-  .bb-four-col .bb-main-col {
+  .container.responsive .bb-four-col .bb-main-col {
     width: 72.72727272%;
   }
-  .bb-four-col .bb-main-col .bb-col {
+  .container.responsive .bb-four-col .bb-main-col .bb-col {
     width: 46.875%;
     margin-right: 6.25%;
   }
-  .bb-four-col .bb-main-col .bb-col:nth-child(2n) {
+  .container.responsive .bb-four-col .bb-main-col .bb-col:nth-child(2n) {
     margin-right: 0;
   }
-  .bb-four-col.bb-equal-cols .bb-col {
+  .container.responsive .bb-four-col.bb-equal-cols .bb-col {
     width: 30.3030%;
     margin-right: 4.5455%;
   }
-  .bb-four-col.bb-equal-cols .bb-col:nth-child(3n) {
+  .container.responsive .bb-four-col.bb-equal-cols .bb-col:nth-child(3n) {
     margin-right: 0;
   }
-  .bb-four-col .display-grid .display-item {
+  .container.responsive .bb-four-col .display-grid .display-item {
     width: 46.875%;
     margin-right: 6.25% !important;
     clear: none!important;
   }
-  .bb-four-col .display-grid .display-item:nth-child(2n) {
+  .container.responsive .bb-four-col .display-grid .display-item:nth-child(2n) {
     margin-right: 0!important;
   }
-  .bb-four-col .display-grid .display-item:nth-child(2n+1) {
+  .container.responsive .bb-four-col .display-grid .display-item:nth-child(2n+1) {
     clear: both!important;
   }
 }
 @media only screen and (max-width: 499px) {
-  /* all cols should go to full width */
-  .bb-four-col,
-  .bb-three-col,
-  .bb-two-col,
-  .bb-one-col {
+  .container.responsive {
+    /* all cols should go to full width */
+  
+  }
+  .container.responsive .bb-four-col,
+  .container.responsive .bb-three-col,
+  .container.responsive .bb-two-col,
+  .container.responsive .bb-one-col {
     padding: 0 5%;
   }
-  .bb-four-col .bb-side-col,
-  .bb-three-col .bb-side-col,
-  .bb-two-col .bb-side-col,
-  .bb-one-col .bb-side-col,
-  .bb-four-col .bb-col,
-  .bb-three-col .bb-col,
-  .bb-two-col .bb-col,
-  .bb-one-col .bb-col,
-  .bb-four-col .bb-main-col,
-  .bb-three-col .bb-main-col,
-  .bb-two-col .bb-main-col,
-  .bb-one-col .bb-main-col {
+  .container.responsive .bb-four-col .bb-side-col,
+  .container.responsive .bb-three-col .bb-side-col,
+  .container.responsive .bb-two-col .bb-side-col,
+  .container.responsive .bb-one-col .bb-side-col,
+  .container.responsive .bb-four-col .bb-col,
+  .container.responsive .bb-three-col .bb-col,
+  .container.responsive .bb-two-col .bb-col,
+  .container.responsive .bb-one-col .bb-col,
+  .container.responsive .bb-four-col .bb-main-col,
+  .container.responsive .bb-three-col .bb-main-col,
+  .container.responsive .bb-two-col .bb-main-col,
+  .container.responsive .bb-one-col .bb-main-col {
     width: auto!important;
     margin-right: 0!important;
     float: none!important;

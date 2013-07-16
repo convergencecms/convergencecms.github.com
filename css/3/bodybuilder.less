@@ -114,42 +114,47 @@ Copyright 2013 @mtrozzo & @thatericsmith
 }
 
 @media only screen and (min-width:1025px) {
-	.bb-one-col,
-	.bb-two-col .bb-main-col{font-size:1.5em;}
+	.container.responsive{
+		.bb-one-col,
+		.bb-two-col .bb-main-col{font-size:1.5em;}
+	}
 }
 
 @media only screen and (max-width: 767px) {
-	/* on 3 and 4 col, cols inside the main col should go to full width */
-	
-	.bb-four-col{
-		.bb-three-col;
-		.display-grid .display-item{
-			width:@bb3col; 
-			margin-right:@bb3colmargin!important; 
-			clear:none!important;
-			&:nth-child(2n){
-				margin-right:0!important;
-			}
-			&:nth-child(2n+1){
-				clear:both!important;
+	.container.responsive{
+		/* on 3 and 4 col, cols inside the main col should go to full width */
+		.bb-four-col{
+			.bb-three-col;
+			.display-grid .display-item{
+				width:@bb3col; 
+				margin-right:@bb3colmargin!important; 
+				clear:none!important;
+				&:nth-child(2n){
+					margin-right:0!important;
+				}
+				&:nth-child(2n+1){
+					clear:both!important;
+				}
 			}
 		}
 	}
 }
 
 @media only screen and (max-width: 499px) {
-	/* all cols should go to full width */
-	.bb-four-col,
-	.bb-three-col,
-	.bb-two-col,
-	.bb-one-col{
-		padding:0 @bb1colpad - @bbpad;
-		.bb-side-col,
-		.bb-col,
-		.bb-main-col{
-			width:auto!important; 
-			margin-right:0!important; 
-			float:none!important;
+	.container.responsive{
+		/* all cols should go to full width */
+		.bb-four-col,
+		.bb-three-col,
+		.bb-two-col,
+		.bb-one-col{
+			padding:0 @bb1colpad - @bbpad;
+			.bb-side-col,
+			.bb-col,
+			.bb-main-col{
+				width:auto!important; 
+				margin-right:0!important; 
+				float:none!important;
+			}
 		}
 	}
 }
