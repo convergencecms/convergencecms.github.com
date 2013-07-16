@@ -147,17 +147,17 @@
 /*  #Media Queries - NO REAL NEED TO MODIFY THIS SECTION
 ================================================== */
     @media only screen and (max-width: @mq1) {
-		.container{ 
+		.container.responsive{ 
 			width:100% - 2*@gutter;
 		}
 	}
 	@media only screen and (max-width: @mq2) {
-        .columns, .column { margin: 0!important; }
-
-		.container{ 
+		.container.responsive{ 
 			width:100% - 2*@gutter;
 			
-			 .column{
+			.columns, .column { margin: 0!important; }
+			
+			.column{
 			 	&.one-third,
 				&.two-thirds,
 				&.one					{ width:100%;}
@@ -206,26 +206,26 @@
 				}
 			}
 			
-				
+			/* Offsets */
+			.offset-by-half,
+			.offset-by-one,
+			.offset-by-two,
+			.offset-by-three,
+			.offset-by-four,
+			.offset-by-five,
+			.offset-by-six,
+			.offset-by-seven,
+			.offset-by-eight,
+			.offset-by-nine,
+			.offset-by-ten,
+			.offset-by-eleven,
+			.offset-by-twelve,
+			.offset-by-thirteen,
+			.offset-by-fourteen,
+			.offset-by-fifteen { padding-left: 0; }				
 		}
 
-        /* Offsets */
-        .container .offset-by-half,
-        .container .offset-by-one,
-        .container .offset-by-two,
-        .container .offset-by-three,
-        .container .offset-by-four,
-        .container .offset-by-five,
-        .container .offset-by-six,
-        .container .offset-by-seven,
-        .container .offset-by-eight,
-        .container .offset-by-nine,
-        .container .offset-by-ten,
-        .container .offset-by-eleven,
-        .container .offset-by-twelve,
-        .container .offset-by-thirteen,
-        .container .offset-by-fourteen,
-        .container .offset-by-fifteen { padding-left: 0; }
+
 
     }
 

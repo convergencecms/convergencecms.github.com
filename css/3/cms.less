@@ -841,23 +841,25 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
 
 	/* All Mobile Sizes (devices and browser) */
 	@media only screen and (max-width: @mq2) {
-		.product-list{
-			&.display-list{
-				.field-name{
-					font-size:1.3em;
+		.container.responsive{
+			.product-list{
+				&.display-list{
+					.field-name{
+						font-size:1.3em;
+					}
 				}
+				.field-description{
+					display:none;
+				}
+			}	
+			
+			form.form-comments{
+				padding:1.5em;
 			}
-			.field-description{
+			
+			.search-result-url{
 				display:none;
 			}
-		}	
-		
-		form.form-comments{
-			padding:1.5em;
-		}
-		
-		.search-result-url{
-			display:none;
 		}
 	}
 
@@ -867,43 +869,46 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
 
 	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 	@media only screen and (max-width: 499px) {
-		/* grid goes to 2 per row */
-		.display-grid.display-gridcols-4,
-		.display-grid.display-gridcols-3,
-		.display-grid{
-			.display-item{
-				width:(100 - (1 * @sidegutter)) / 2;
-				clear:none!important;
-				margin-right:@sidegutter!important;
-				
-				&:nth-child(2n){
-					margin-right:0!important;
-				}
-				&:nth-child(2n+1){
-					clear:both!important;
+		.container.responsive{
+			/* grid goes to 2 per row */
+			.display-grid.display-gridcols-4,
+			.display-grid.display-gridcols-3,
+			.display-grid{
+				.display-item{
+					width:(100 - (1 * @sidegutter)) / 2;
+					clear:none!important;
+					margin-right:@sidegutter!important;
+					
+					&:nth-child(2n){
+						margin-right:0!important;
+					}
+					&:nth-child(2n+1){
+						clear:both!important;
+					}
 				}
 			}
+			
+			/* form comments inputs go 1 per row*/
+			form.form-comments{
+				padding:1em;
+			}
+			
+			.account-transaction-shipping,
+			.account-transaction-billing{display:none;}
 		}
-		
-		/* form comments inputs go 1 per row*/
-		form.form-comments{
-			padding:1em;
-		}
-		
-		.account-transaction-shipping,
-		.account-transaction-billing{display:none;}
-		
 	}
 	@media only screen and (max-width: 349px) {
-		/* grid goes to 1 per row */		
-		.display-grid.display-gridcols-4,
-		.display-grid.display-gridcols-3,
-		.display-grid.display-gridcols-2,
-		.display-grid{
-			.display-item{
-				width:100%;
-				margin-right:0!important;
-				clear:both!important;
+		.container.responsive{
+			/* grid goes to 1 per row */		
+			.display-grid.display-gridcols-4,
+			.display-grid.display-gridcols-3,
+			.display-grid.display-gridcols-2,
+			.display-grid{
+				.display-item{
+					width:100%;
+					margin-right:0!important;
+					clear:both!important;
+				}
 			}
 		}
 	}

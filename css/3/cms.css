@@ -407,115 +407,116 @@ CONTENTS:
 /*  #Media Queries - NO REAL NEED TO MODIFY THIS SECTION
 ================================================== */
 @media only screen and (max-width: 1199px) {
-  .container {
+  .container.responsive {
     width: 95.833333334%;
   }
 }
 @media only screen and (max-width: 767px) {
-  .columns,
-  .column {
+  .container.responsive {
+    width: 95.833333334%;
+    /* Offsets */
+  
+  }
+  .container.responsive .columns,
+  .container.responsive .column {
     margin: 0!important;
   }
-  .container {
-    width: 95.833333334%;
-  }
-  .container .column.one-third,
-  .container .column.two-thirds,
-  .container .column.one {
+  .container.responsive .column.one-third,
+  .container.responsive .column.two-thirds,
+  .container.responsive .column.one {
     width: 100%;
   }
-  .container .columns.two,
-  .container .columns.three,
-  .container .columns.four,
-  .container .columns.five,
-  .container .columns.six,
-  .container .columns.seven,
-  .container .columns.eight,
-  .container .columns.nine,
-  .container .columns.ten,
-  .container .columns.eleven,
-  .container .columns.twelve,
-  .container .columns.thirteen,
-  .container .columns.fourteen,
-  .container .columns.fifteen,
-  .container .columns.sixteen {
+  .container.responsive .columns.two,
+  .container.responsive .columns.three,
+  .container.responsive .columns.four,
+  .container.responsive .columns.five,
+  .container.responsive .columns.six,
+  .container.responsive .columns.seven,
+  .container.responsive .columns.eight,
+  .container.responsive .columns.nine,
+  .container.responsive .columns.ten,
+  .container.responsive .columns.eleven,
+  .container.responsive .columns.twelve,
+  .container.responsive .columns.thirteen,
+  .container.responsive .columns.fourteen,
+  .container.responsive .columns.fifteen,
+  .container.responsive .columns.sixteen {
     width: 100%;
   }
-  .container .alpha.column.one-third,
-  .container .omega.column.one-third,
-  .container .alpha.omega.column.one-third,
-  .container .alpha.column.two-thirds,
-  .container .omega.column.two-thirds,
-  .container .alpha.omega.column.two-thirds,
-  .container .alpha.column.one,
-  .container .omega.column.one,
-  .container .alpha.omega.column.one {
+  .container.responsive .alpha.column.one-third,
+  .container.responsive .omega.column.one-third,
+  .container.responsive .alpha.omega.column.one-third,
+  .container.responsive .alpha.column.two-thirds,
+  .container.responsive .omega.column.two-thirds,
+  .container.responsive .alpha.omega.column.two-thirds,
+  .container.responsive .alpha.column.one,
+  .container.responsive .omega.column.one,
+  .container.responsive .alpha.omega.column.one {
     width: 100%;
   }
-  .container .alpha.columns.two,
-  .container .omega.columns.two,
-  .container .alpha.omega.columns.two,
-  .container .alpha.columns.three,
-  .container .omega.columns.three,
-  .container .alpha.omega.columns.three,
-  .container .alpha.columns.four,
-  .container .omega.columns.four,
-  .container .alpha.omega.columns.four,
-  .container .alpha.columns.five,
-  .container .omega.columns.five,
-  .container .alpha.omega.columns.five,
-  .container .alpha.columns.six,
-  .container .omega.columns.six,
-  .container .alpha.omega.columns.six,
-  .container .alpha.columns.seven,
-  .container .omega.columns.seven,
-  .container .alpha.omega.columns.seven,
-  .container .alpha.columns.eight,
-  .container .omega.columns.eight,
-  .container .alpha.omega.columns.eight,
-  .container .alpha.columns.nine,
-  .container .omega.columns.nine,
-  .container .alpha.omega.columns.nine,
-  .container .alpha.columns.ten,
-  .container .omega.columns.ten,
-  .container .alpha.omega.columns.ten,
-  .container .alpha.columns.eleven,
-  .container .omega.columns.eleven,
-  .container .alpha.omega.columns.eleven,
-  .container .alpha.columns.twelve,
-  .container .omega.columns.twelve,
-  .container .alpha.omega.columns.twelve,
-  .container .alpha.columns.thirteen,
-  .container .omega.columns.thirteen,
-  .container .alpha.omega.columns.thirteen,
-  .container .alpha.columns.fourteen,
-  .container .omega.columns.fourteen,
-  .container .alpha.omega.columns.fourteen,
-  .container .alpha.columns.fifteen,
-  .container .omega.columns.fifteen,
-  .container .alpha.omega.columns.fifteen,
-  .container .alpha.columns.sixteen,
-  .container .omega.columns.sixteen,
-  .container .alpha.omega.columns.sixteen {
+  .container.responsive .alpha.columns.two,
+  .container.responsive .omega.columns.two,
+  .container.responsive .alpha.omega.columns.two,
+  .container.responsive .alpha.columns.three,
+  .container.responsive .omega.columns.three,
+  .container.responsive .alpha.omega.columns.three,
+  .container.responsive .alpha.columns.four,
+  .container.responsive .omega.columns.four,
+  .container.responsive .alpha.omega.columns.four,
+  .container.responsive .alpha.columns.five,
+  .container.responsive .omega.columns.five,
+  .container.responsive .alpha.omega.columns.five,
+  .container.responsive .alpha.columns.six,
+  .container.responsive .omega.columns.six,
+  .container.responsive .alpha.omega.columns.six,
+  .container.responsive .alpha.columns.seven,
+  .container.responsive .omega.columns.seven,
+  .container.responsive .alpha.omega.columns.seven,
+  .container.responsive .alpha.columns.eight,
+  .container.responsive .omega.columns.eight,
+  .container.responsive .alpha.omega.columns.eight,
+  .container.responsive .alpha.columns.nine,
+  .container.responsive .omega.columns.nine,
+  .container.responsive .alpha.omega.columns.nine,
+  .container.responsive .alpha.columns.ten,
+  .container.responsive .omega.columns.ten,
+  .container.responsive .alpha.omega.columns.ten,
+  .container.responsive .alpha.columns.eleven,
+  .container.responsive .omega.columns.eleven,
+  .container.responsive .alpha.omega.columns.eleven,
+  .container.responsive .alpha.columns.twelve,
+  .container.responsive .omega.columns.twelve,
+  .container.responsive .alpha.omega.columns.twelve,
+  .container.responsive .alpha.columns.thirteen,
+  .container.responsive .omega.columns.thirteen,
+  .container.responsive .alpha.omega.columns.thirteen,
+  .container.responsive .alpha.columns.fourteen,
+  .container.responsive .omega.columns.fourteen,
+  .container.responsive .alpha.omega.columns.fourteen,
+  .container.responsive .alpha.columns.fifteen,
+  .container.responsive .omega.columns.fifteen,
+  .container.responsive .alpha.omega.columns.fifteen,
+  .container.responsive .alpha.columns.sixteen,
+  .container.responsive .omega.columns.sixteen,
+  .container.responsive .alpha.omega.columns.sixteen {
     width: 100%;
   }
-  /* Offsets */
-  .container .offset-by-half,
-  .container .offset-by-one,
-  .container .offset-by-two,
-  .container .offset-by-three,
-  .container .offset-by-four,
-  .container .offset-by-five,
-  .container .offset-by-six,
-  .container .offset-by-seven,
-  .container .offset-by-eight,
-  .container .offset-by-nine,
-  .container .offset-by-ten,
-  .container .offset-by-eleven,
-  .container .offset-by-twelve,
-  .container .offset-by-thirteen,
-  .container .offset-by-fourteen,
-  .container .offset-by-fifteen {
+  .container.responsive .offset-by-half,
+  .container.responsive .offset-by-one,
+  .container.responsive .offset-by-two,
+  .container.responsive .offset-by-three,
+  .container.responsive .offset-by-four,
+  .container.responsive .offset-by-five,
+  .container.responsive .offset-by-six,
+  .container.responsive .offset-by-seven,
+  .container.responsive .offset-by-eight,
+  .container.responsive .offset-by-nine,
+  .container.responsive .offset-by-ten,
+  .container.responsive .offset-by-eleven,
+  .container.responsive .offset-by-twelve,
+  .container.responsive .offset-by-thirteen,
+  .container.responsive .offset-by-fourteen,
+  .container.responsive .offset-by-fifteen {
     padding-left: 0;
   }
 }
@@ -7999,16 +8000,16 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
 }
 /* All Mobile Sizes (devices and browser) */
 @media only screen and (max-width: 767px) {
-  .product-list.display-list .field-name {
+  .container.responsive .product-list.display-list .field-name {
     font-size: 1.3em;
   }
-  .product-list .field-description {
+  .container.responsive .product-list .field-description {
     display: none;
   }
-  form.form-comments {
+  .container.responsive form.form-comments {
     padding: 1.5em;
   }
-  .search-result-url {
+  .container.responsive .search-result-url {
     display: none;
   }
 }
@@ -8018,38 +8019,45 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
 }
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 @media only screen and (max-width: 499px) {
-  /* grid goes to 2 per row */
-  .display-grid.display-gridcols-4 .display-item,
-  .display-grid.display-gridcols-3 .display-item,
-  .display-grid .display-item {
+  .container.responsive {
+    /* grid goes to 2 per row */
+  
+    /* form comments inputs go 1 per row*/
+  
+  }
+  .container.responsive .display-grid.display-gridcols-4 .display-item,
+  .container.responsive .display-grid.display-gridcols-3 .display-item,
+  .container.responsive .display-grid .display-item {
     width: 47.6745%;
     clear: none!important;
     margin-right: 4.651% !important;
   }
-  .display-grid.display-gridcols-4 .display-item:nth-child(2n),
-  .display-grid.display-gridcols-3 .display-item:nth-child(2n),
-  .display-grid .display-item:nth-child(2n) {
+  .container.responsive .display-grid.display-gridcols-4 .display-item:nth-child(2n),
+  .container.responsive .display-grid.display-gridcols-3 .display-item:nth-child(2n),
+  .container.responsive .display-grid .display-item:nth-child(2n) {
     margin-right: 0!important;
   }
-  .display-grid.display-gridcols-4 .display-item:nth-child(2n+1),
-  .display-grid.display-gridcols-3 .display-item:nth-child(2n+1),
-  .display-grid .display-item:nth-child(2n+1) {
+  .container.responsive .display-grid.display-gridcols-4 .display-item:nth-child(2n+1),
+  .container.responsive .display-grid.display-gridcols-3 .display-item:nth-child(2n+1),
+  .container.responsive .display-grid .display-item:nth-child(2n+1) {
     clear: both!important;
   }
-  /* form comments inputs go 1 per row*/
-  form.form-comments {
+  .container.responsive form.form-comments {
     padding: 1em;
   }
-  .account-transaction-shipping,
-  .account-transaction-billing {
+  .container.responsive .account-transaction-shipping,
+  .container.responsive .account-transaction-billing {
     display: none;
   }
 }
 @media only screen and (max-width: 349px) {
-  /* grid goes to 1 per row */.display-grid.display-gridcols-4 .display-item,
-  .display-grid.display-gridcols-3 .display-item,
-  .display-grid.display-gridcols-2 .display-item,
-  .display-grid .display-item {
+  .container.responsive {
+    /* grid goes to 1 per row */
+  }
+  .container.responsive .display-grid.display-gridcols-4 .display-item,
+  .container.responsive .display-grid.display-gridcols-3 .display-item,
+  .container.responsive .display-grid.display-gridcols-2 .display-item,
+  .container.responsive .display-grid .display-item {
     width: 100%;
     margin-right: 0!important;
     clear: both!important;
