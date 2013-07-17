@@ -7378,7 +7378,7 @@ a.back-link {
   list-style: none;
 }
 .posts-list.display-simple .display-item {
-  margin: 0;
+  margin: 0 0 .5em;
   padding: 0;
   border: none;
 }
