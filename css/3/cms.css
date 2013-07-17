@@ -7372,6 +7372,16 @@ a.back-link {
 .posts-list.display-grid .field-sharing {
   display: none;
 }
+.posts-list.display-simple {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.posts-list.display-simple .display-item {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
 .posts-list .field-name {
   line-height: 1.125;
 }
