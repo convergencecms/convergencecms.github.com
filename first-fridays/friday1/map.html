@@ -1,0 +1,79 @@
+<@include path="include/header.html"/@>
+
+
+  
+
+
+    <!-- MAIN -->
+    <div class="twelve columns main">
+        <div class="content">
+            <div id="map" style="width:100%; height:400px"></div>
+        <div class="cl"></div>
+        </div>
+    
+    
+    <div class="cl"></div>
+	</div>
+
+
+  <!-- SIDE -->
+    <div class="four columns side">
+        <div class="side-content">
+            <nav>
+                <@menu type="subnav" showchildren="true" showparent="true"/@>
+            </nav>
+			<@modules id="sidebar" global="true"/@>
+        </div>
+    </div>
+
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script>
+    var shopsmap;
+    var shopsjson = <@json type="item-list" slug="shops"/@>;
+    console.log(shopsjson);
+
+    function initialize(){
+        var mapcenter = new google.maps.LatLng(33.758492,-118.125393);
+        var mapOptions = {
+            zoom: 14,
+            zoomControl: false,
+            maxZoom: 14,
+            minZoom: 14,
+            scrollwheel:false,
+            center: mapcenter,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+
+        shopsmap = new google.maps.Map(document.getElementById('map'),mapOptions);
+
+        var shops = shopsjson['item-list']['items'];
+        var shopgps, shopwindow, shopmarkers = [], shopcontents = [];
+
+        $.each(shops,function(i,$shop){
+            shopgps = new google.maps.LatLng($shop.fields.latitude,$shop.fields.longitude);
+
+            shopmarkers[i] = new google.maps.Marker({
+                position: shopgps,
+                map: shopsmap
+            });
+
+            shopcontents[i] = '<p><a href="shops-'+$shop.fields.slug+'">'+$shop.fields.name+'</a></p>';
+
+            shopwindow = new google.maps.InfoWindow({
+                content: shopcontents[i]
+            });
+
+            google.maps.event.addListener(shopmarkers[i],'click',function(){
+                shopwindow.setContent(shopcontents[i]);
+                shopwindow.open(shopsmap,shopmarkers[i]);
+            });
+
+        });
+
+    }
+
+    google.maps.event.addDomListener(window,'load',initialize);
+</script>
+
+
+<@include path="include/footer.html"/@>
