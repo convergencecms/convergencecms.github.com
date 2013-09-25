@@ -1,0 +1,924 @@
+/* 
+Start.css is a document that houses all of the features, reset and template styles for a site. 
+You can comment out or rewrite styles on a whim. We also import the MUCSSLE responsive grid.
+This stylesheet is run on LESS. Not familiar with LESS? You can either edit "start.css" directly, 
+or learn more about the Dynamic Stylesheet Language here: http://lesscss.org/ 
+and learn about the compiler here: http://incident57.com/less/
+
+
+CONTENTS:
+
+0. LESS variables
+1. Reset Styles
+2. Mucssle Responsive Grid
+3. Convergence's custom version of Bootstrap
+4. Convergence starter styles for features
+*/
+
+/* 0. LESS VARIABLES - customize your default experience
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/* #Customize MUCSSLE - Pick Breakpoints that work for you - or leave the defaults, they are pretty cool as is.
+================================================== */
+@widest: 1200px;/* Widest breakpoint - typically is 960 or 1200 - it's the thickest your container(s) will ever go */
+@breakdance: 768px; /* Breakdance point - typically this is 768 - from here on down, every column goes full-width */
+
+/* Colors
+================================================== */
+@color1:#000; /* Color 1 in the WYSIWYG editor under Styles */
+@color2:#555; /* Color 2 in the WYSIWYG editor under Styles */
+@color3:#aaa; /* Color 3 in the WYSIWYG editor under Styles */
+
+@notsoimportant:#999;
+@lightborder:#ccc;
+@danger:#e00;
+@good:#380;
+@highlight:#ffd;
+
+/* Typography
+================================================== */
+@base:1em;
+@h1base: 2.75 * @base;
+@h2base: 2.25 * @base;
+@h3base: 1.75 * @base;
+@h4base: 1.25 * @base;
+@h5base: 1 * @base;
+@h6base: .85 * @base;
+@smallheading: .5em;
+
+/* Display Items (Blog Articles, Events, Products, Categories, Item List Items, Users)
+================================================== */
+@gridcols:3; /* Number of display items per row in a grid (default:3) */
+/* for some reason with LESS, you need to change this Xn value to what you chose for numperrow -working on a fix :) (default:3) */
+@sidegutter:4.651%; /* percent value between display items in a grid or an image and its fields in list view (default:4%) */
+@bottomgutter:@sidegutter; /* value between display items on the bottom (default:30px) */
+@tableimagemaxwidth:100px; /*don't let table images get out of hand, width-wise (default:200px) */
+
+/* BOOTSTRAP
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////// */
+@import 'bootstrap.less';
+
+
+
+/* 1. RESET STYLES
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+.left { float: left; display: inline; }
+.right { float: right; display: inline; }
+
+
+.cl { clear: both; display: block; height: 0; font-size:10px; overflow:hidden; line-height: 0; }
+.notext {  font-size:0px; overflow:hidden; line-height: 0; text-indent: -4000px; color: #fff; }
+
+
+/* Typekit de-flashing */  
+.wf-loading {
+	h1, h2, h3, h4, h5, h6, p, a, li, li a, td, th, span, input, label, button, .display-fields 
+	{visibility:hidden;}
+}
+
+.wf-active {
+	h1, h2, h3, h4, h5, h6, p, a, li, li a, td, th, span, input, label, button, .display-fields 
+	{visibility:visible;}
+}
+
+
+
+
+/* 2. MUCSSLE
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////*/
+@import 'mucssle.less';
+
+/* 3. BODYBUILDER GRID SYSTEM 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*
+@import 'bodybuilder.less';
+*/
+
+
+/* 4. CONVERGENCE feature-specific starter styles for blog elements, forms, inputs, etc.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+
+/* GENERIC DISPLAY ITEMS (PRODUCTS, CATEGORIES, ITEMS, USERS) ///////////////////////////////////////////////////////////////////////////////// */
+@gridwidth: (100 - ((@gridcols - 1)*@sidegutter)) / @gridcols;
+
+
+.display-image{max-width:100%;}
+
+.display-item{
+	img{max-width:100%;}
+}
+
+// Stack
+.display-stack {
+	.display-item {
+		margin:0 0 @bottomgutter 0; 
+		float:none; 
+		width:100%;
+	}
+}
+// Grid
+.display-grid {
+	.display-item {
+		margin:0 @sidegutter @bottomgutter 0; 
+		float:left; 
+		width:@gridwidth; 
+		
+		.display-fields{
+			margin-top:5px;
+		}
+		.field-name{
+			font-size:1.3em;
+		}
+		
+		&:nth-child(3n){
+			margin-right:0;
+		}
+		&:nth-child(3n+1){
+			clear:both;
+		}
+	}
+	&.single-item,
+	&.display-gridcols-1{
+		.display-item{
+			margin:0 0 @bottomgutter; 
+			float:none; 
+			width:auto; 
+		}
+	}
+	&.display-gridcols-2{
+		.display-item{
+			width:(100 - (1 * @sidegutter)) / 2; 
+			&:nth-child(3n){
+				margin-right:@sidegutter;
+			}
+			&:nth-child(3n+1){
+				clear:none;
+			}
+			&:nth-child(2n){
+				margin-right:0;
+			}
+			&:nth-child(2n+1){
+				clear:both;
+			}
+		}
+	}
+	&.display-gridcols-3{
+		.display-item{
+			width:(100 - (2 * @sidegutter)) / 3; 
+		}
+	}
+	&.display-gridcols-4{
+		.display-item{
+			width:(100 - (3 * @sidegutter)) / 4; 
+			&:nth-child(3n){
+				margin-right:@sidegutter;
+			}
+			&:nth-child(3n+1){
+				clear:none;
+			}
+			&:nth-child(4n){
+				margin-right:0;
+			}
+			&:nth-child(4n+1){
+				clear:both;
+			}
+		
+		}
+	}
+}
+
+.display-first-in-row{clear:both!important;}
+.display-last-in-row{margin-right:0px!important;}
+
+
+// List
+.display-list {
+	.clearfix;
+
+	.display-item {
+		float:none; 
+		clear:both;
+		height:auto; 
+		margin:0 0 2*@bottomgutter;
+		padding:0 0 2*@bottomgutter;
+		border:solid 1px @lightborder;
+		border-width:0 0 1px;
+		width:auto; 
+	}
+	.display-image {
+		float:left;
+		margin:0 @sidegutter 0px 0; 
+		width:@gridwidth; 
+	}
+	.display-fields{
+		float:left;
+		width:100% - @gridwidth - @sidegutter;
+	}
+	.field-name{
+		font-size:1.8em;
+	}
+	
+	.display-item-no-image{
+		.display-image{
+			display:none;
+		}
+		.display-fields{
+			width:100%;
+		}
+	}
+}
+
+// Table 
+.display-table,.product-buy-table{
+	img {max-width:@tableimagemaxwidth;}
+}
+
+
+
+
+/* Blog Styles    ///////////////////////////////////////////////////////////////////////////////// */
+
+
+a.back-link {
+    display: block;
+    font-size: 75%;
+    margin: 0 0 @bottomgutter;
+}
+.posts-list{
+	.display-item {
+		border-bottom: 1px solid @lightborder;
+		margin-bottom: @bottomgutter * 2;
+		padding-bottom: @bottomgutter * 2;
+	}
+	&.display-grid{
+		font-size:85%;
+		.field-summary{
+			img{display:none;}
+		}
+		.display-item{
+			border-bottom:none;
+			padding-bottom:0;
+			margin-bottom:2*@bottomgutter;
+		}
+		.field-name{
+			padding-bottom:.1em;
+			font-size:2em;
+		}
+		.field-post-info {
+			padding-bottom:.58em;
+		}
+		.field-date,
+		.field-author,
+		.field-location{display:block;}
+		.field-summary{
+			h1,h2,h3,h4{
+				font-size:1em;
+				small{
+					font-size:1em;
+				}
+			}
+		}
+		.field-sharing{
+			display:none;
+		}
+	}
+	&.display-simple{
+		margin:0;
+		padding:0;
+		list-style:none;
+
+		.display-item{
+			margin:0 0 .5em;
+			padding:0;
+			border:none;
+		}
+	}
+	.field-name {
+		line-height: 1.125;
+	}
+	.field-post-info {
+		color: @notsoimportant;
+		font-size: 85%;
+	}
+}
+.post-display-summary .field-info {
+    padding-bottom: 8px;
+}
+.display-stack,
+.post-detail-view{
+	.field-body,
+	.field-summary{
+		margin:1em 0 0;
+	}
+	.field-name {
+		font-size: @h1base;
+		line-height: 1;
+	}
+	.field-post-info{
+		margin-bottom:1em;
+	}
+}
+
+.post-title{
+	padding-bottom:.28em;
+}
+
+
+
+/* sharing  */
+.field-post-info,
+.field-tags {
+    color: @notsoimportant;
+	font-size:85%;
+}
+.field-tags {
+    margin:1em 0;
+}
+.addthis_toolbox.addthis_default_style.addthis_16x16_style{
+	font-size:16px!important;
+}
+.addthis_default_style{
+.at300b,
+.at300m {display:inline-block;float:none; padding:0;}
+.at300b img{vertical-align:top; margin-top:1px;}
+.at300m {width:16px; height:16px;}
+}
+.addthis_toolbox.addthis_default_style .at300bs.at15t_compact {
+    background: url("http://www.convergencecms.co/resources/images/c-icon-share.png") no-repeat 0 0;
+	margin:1px 0 0!important;
+}
+
+/* comments */
+
+.comments {
+    border:1px solid @lightborder;
+    border-width: 1px 0 0;
+    margin: @bottomgutter 0 0;
+    padding: 0 0 @bottomgutter;
+	h4{
+		padding:@bottomgutter - 1 0;
+	}
+	.comment {
+		border:1px solid @lightborder;
+		border-width: 0 0 1px;
+		padding: 0 @sidegutter @bottomgutter;
+		margin: 0 0 @bottomgutter;
+	}
+}
+.comment-meta {
+	p {
+		color: @notsoimportant;
+		font-size: .7em !important;
+		font-weight: normal;
+		line-height: 1.2 !important;
+		margin: 0 !important;
+		padding: 0 !important;
+	
+		strong {
+			color:#333;
+			font-size: 1.3em !important;
+			font-weight: normal;
+		}	
+	}
+}
+
+form.form-comments {
+    background:#f5f5f5;
+    border: 1px solid #ebebeb;
+	border-radius:4px;
+    margin: @bottomgutter 0;
+	padding:2.25em 0;
+    width: auto;
+	
+	h4 {
+		text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.8);
+		padding:0 0 1em;
+	}
+	.control-group {
+		float: none;
+		&#control-group-captcha_code{
+			max-width:180px;
+		}
+	}
+
+	img#captcha{
+		width:100%;
+		display:block;
+		margin-bottom:10px;
+	}
+	input[type="text"],
+	input[type="email"]{padding:9px;height:40px;}
+	textarea{
+		height:126px;
+		padding:9px;
+	}
+}
+
+
+/* Calendar   ///////////////////////////////////////////////////////////////////////////////// */
+
+.fc-header-title h2{margin:0; padding:0;}
+
+
+
+/* Filtering   ///////////////////////////////////////////////////////////////////////////////// */
+
+ul.filter-list{list-style:none; margin:0; padding:0;}
+
+#datasearch-form{
+	select,input{width:100%;}
+}
+
+/* Forms   ///////////////////////////////////////////////////////////////////////////////// */
+label.error,
+.form-item-required-symbol{color:@danger!important;}
+
+/* MENUS   ///////////////////////////////////////////////////////////////////////////////// */
+
+ul.menu,
+ul.menu ul
+{margin:0; padding:0; list-style:none; }
+
+/* Photo Slideshows   ///////////////////////////////////////////////////////////////////////////////// */
+
+/* FlexSlider Default Theme
+*********************************/
+.flexslider {margin: 0 0 50px; background: #fff; position: relative; zoom: 1;}
+.slideshow-viewport {max-height: 2000px; -webkit-transition: all 1s ease; -moz-transition: all 1s ease; transition: all 1s ease;}
+.loading .slideshow-viewport {max-height: 300px;}
+.flexslider .slides {zoom: 1;}
+
+.carousel li {margin-right: 5px}
+
+
+/* Direction Nav */
+.slideshow-direction-nav {*height: 0;}
+.slideshow-direction-nav a {width: 30px; height: 30px; margin: -20px 0 0; display: block; background: url(http://www.convergencecms.info/resources/images/bg_direction_nav.png) no-repeat 0 0; position: absolute; top: 50%; z-index: 10; cursor: pointer; text-indent: -9999px; opacity: 0; -webkit-transition: all .3s ease;}
+.slideshow-direction-nav .slideshow-next {background-position: 100% 0; right: -36px; }
+.slideshow-direction-nav .slideshow-prev {left: -36px;}
+.flexslider:hover .slideshow-next {opacity: 0.8; right: 15px;}
+.flexslider:hover .slideshow-prev {opacity: 0.8; left: 15px;}
+.flexslider:hover .slideshow-next:hover, .flexslider:hover .slideshow-prev:hover {opacity: 1;}
+.slideshow-direction-nav .slideshow-disabled {opacity: .3!important; filter:alpha(opacity=30); cursor: default;}
+
+/* Control Nav */
+.slideshow-control-nav {width: 100%; position: absolute; bottom: -40px; text-align: center;}
+.slideshow-control-nav li {margin: 0 6px; display: inline-block; zoom: 1; *display: inline;}
+.slideshow-control-paging li a {width: 11px; height: 11px; display: block; background: #666; background: rgba(0,0,0,0.5); cursor: pointer; text-indent: -9999px; -webkit-border-radius: 20px; -moz-border-radius: 20px; -o-border-radius: 20px; border-radius: 20px; box-shadow: inset 0 0 3px rgba(0,0,0,0.3);}
+.slideshow-control-paging li a:hover { background: #333; background: rgba(0,0,0,0.7); }
+.slideshow-control-paging li a.slideshow-active { background: #000; background: rgba(0,0,0,0.9); cursor: default; }
+
+.slideshow-control-thumbs {margin: 5px 0 0; position: static; overflow: hidden;}
+.slideshow-control-thumbs li {width: 25%; float: left; margin: 0;}
+.slideshow-control-thumbs img {width: 100%; display: block; opacity: .7; cursor: pointer;}
+.slideshow-control-thumbs img:hover {opacity: 1;}
+.slideshow-control-thumbs .slideshow-active {opacity: 1; cursor: default;}
+
+.slideshow-caption{
+	background: none repeat scroll 0 0 rgba(0, 0, 0, 0.6);
+    bottom: 0;
+    color: #FFFFFF;
+    left: 0;
+    line-height: 18px;
+    padding: 2%;
+    position: absolute;
+    text-align: center;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+    width: 96%;
+}
+
+.slideshow-direction-nav .slideshow-prev {opacity: 1; left: 0;}
+.slideshow-direction-nav .slideshow-next {opacity: 1; right: 0;}
+
+
+
+/* Products   ///////////////////////////////////////////////////////////////////////////////// */
+/* product listing */
+.product-list{
+	.field-price{
+		font-size:1.3em;
+	}
+	&.display-grid{
+		.field-price{
+			color: @notsoimportant;
+		}
+	}
+	
+	&.display-list{
+		.field-rating{
+			padding-bottom:9px;
+		}
+		.field-price{
+			padding-bottom:6px;
+		}
+	}
+	
+	.field.customfield,
+	.field-sku,
+	.field-weight,
+	.field-description{
+		color: @notsoimportant;
+		font-size:80%;
+	}
+	.product-rating.product-no-ratings{display:none;}
+	
+}
+
+
+
+/* categories */
+h3.subcategoryname {clear:both;}
+
+.sidemenu ul.category-product-menu ul.category-product-menu.c-menu-level2 li {padding:0;}
+
+.subcategorylist {padding-bottom:50px;}
+
+/* product detail page */
+
+.product-review-stars-rated {
+    height: 16px;
+    margin: 2px 0;
+}
+.product-detail-price{padding-top:0;}
+.product-compare-price{
+    color: @notsoimportant;
+	text-decoration:line-through;
+}
+.review-recommended-text{display:none;}
+.product-no-ratings {
+    color: @notsoimportant;
+}
+.product-no-recommendations {
+    color: @notsoimportant;
+}
+.product-option-error, 
+.product-itemlist-option-error {
+    color: @danger;
+}
+.category-pagination {
+    clear: both;
+    text-align: center;
+}
+.pagination span, 
+.pagination a {
+    margin: 0 5px;
+}
+
+.product-buy-off {background:@notsoimportant;}
+
+.product-out-of-stock {background: @notsoimportant; padding:10px;}
+
+.product-images{
+	img {
+		display:none; 
+		max-width:100%;
+		&.image-order-1 {
+			display:block;
+		}
+	}
+	.flex-control-thumbs li{
+		list-style:none;
+		display:inline-block;
+		&:hover{cursor:pointer;}
+		img{width:auto;height:64px;}
+	}
+
+	.flex-direction-nav{
+		display:none;
+	}
+ }
+
+.product-custom-field{
+	padding-bottom:1em;
+	p:last-child{
+		padding-bottom:0;
+	}
+	.product-field-name{
+		font-size:1.12em;
+		font-weight:bold;
+	}
+}
+
+.product-variant-table{
+	td{
+		vertical-align:middle;
+		&.product-col-qty{
+			.input-append{
+				margin-bottom:0;
+			}
+		}
+	}
+}
+
+
+/* BREADCRUMB   ///////////////////////////////////////////////////////////////////////////////// */
+
+
+.breadcrumb {color: @notsoimportant; display:block; font-size:.8em; padding-bottom:.5em;}
+.breadcrumb a{color: @notsoimportant;}
+.breadcrumb a:hover {color:darken(@notsoimportant,50%); text-decoration:underline;}
+.breadcrumb-product .last-separator,
+.breadcrumb-product .last-crumb {display:none;}
+
+
+/* SEARCH   ///////////////////////////////////////////////////////////////////////////////// */
+.search-results-container{
+	p {padding:0;margin:0;}
+	hr{
+		margin:25px 0;
+	}
+}
+.search-results{
+	padding-bottom:10px;
+	&.product-list{
+		.search-results-title{
+			padding-bottom:.56em;
+		}
+	}
+}
+.search-result-url{
+	color:@notsoimportant;
+}
+.search-results-title{
+	color:@lightborder;
+	font-weight:normal;
+}
+.search-result{
+	margin:0 0 25px;
+	p,
+	h4,
+	.search-result-title{margin:0;padding:0;}
+}
+
+/* SITEMAP   ///////////////////////////////////////////////////////////////////////////////// */
+ul.menu-type-sitemap {
+    margin-left: 0;
+}
+ul.menu-type-sitemap li ul {
+    margin-left: @bottomgutter;
+}
+
+
+/* TEXT   ///////////////////////////////////////////////////////////////////////////////// */
+
+ul,ol{margin:0 10% 1em;}
+hr{border-color:@lightborder; border-width:1px 0 0;}
+.imageright img, img.imageright {
+    float: right;
+    margin: 0 0 1em 1.7em;
+}
+.imageleft img, img.imageleft {
+    float: left;
+    margin: 0 1.7em 1em 0;
+}
+span#bithtml_parent {
+    width: auto !important;
+}
+table#bithtml_tbl {
+    width: 100% !important;
+}
+.txtcolorone, table#menu_bithtml_bithtml_styleselect_menu_tbl tr#mce_4 a span {
+    color: @color1 !important;
+}
+.txtcolortwo, table#menu_bithtml_bithtml_styleselect_menu_tbl tr#mce_5 a span {
+    color: @color2 !important;
+}
+.txtcolorthree, table#menu_bithtml_bithtml_styleselect_menu_tbl tr#mce_6 a span {
+    color: @color3 !important;
+}
+/* auto color full calendar events based on tags: colorone,colortwo,colorthree */
+.fc-tag-colorone{
+ 	&.fc-event-skin,
+ 	.fc-event-skin{
+		background:@color1 !important;
+		border-color:@color1 !important;
+	}
+}
+.fc-tag-colortwo{
+ 	&.fc-event-skin,
+ 	.fc-event-skin{
+		background:@color2 !important;
+		border-color:@color2 !important;
+	}
+}
+.fc-tag-colorthree{
+ 	&.fc-event-skin,
+ 	.fc-event-skin{
+		background:@color3 !important;
+		border-color:@color3 !important;
+	}
+}
+
+
+/* TWITTER   ///////////////////////////////////////////////////////////////////////////////// */
+.twitter-list{
+	margin-left:0;
+	margin-right:0;
+	.tweet{
+		padding-bottom:1em;
+		list-style:none;
+	}
+}
+
+
+
+/* USERS   ///////////////////////////////////////////////////////////////////////////////// */
+
+.userlist{
+	&.display-grid{
+		.field-name {
+			font-size:1.3em;
+			margin-bottom:4px;
+		}
+	}
+	&.display-grid,
+	&.display-list{
+		.field-slug,
+		.field-company,
+		.field-email,
+		.field-address,
+		.field-address2,
+		.field-city-state-zip,
+		.field-country,
+		.field-phone{
+			color: @notsoimportant;
+			font-size: 85%;
+		}
+	}
+	.field-country,
+	.field-slug{
+		display:none;
+	}
+}
+
+/* USER ACCOUNTS   ///////////////////////////////////////////////////////////////////////////////// */
+.user-account-section table{}
+.user-account-section table {border-width:0px; width:100%;}
+
+.user-itemlist .full-item li {margin:0 0 10px;}
+
+.user-itemlist .full-item li .fieldname {color:@notsoimportant;}
+
+.user-personal address span,
+.account-info address span {
+    display: block;
+}
+.user-personal-image img {width:100%;}
+
+.file-uploaded-box{
+	width:250px;
+}
+.file-uploaded-box img{
+	width:100%;
+}
+
+/* account table styles */
+
+
+/* subscription upload color values */
+
+table.account-subscription-list.modifying-subscription tr.not-this-row td {opacity:0.3; background:#ddd;}
+table.account-subscription-list.modifying-subscription tr.this-row td {background:@highlight;}
+table.account-subscription-list.modifying-subscription tr.this-row a#save-modified-subscription{color:@good; text-decoration:underline;}
+table.account-subscription-list.modifying-subscription tr.this-row a#undo-modified-subscription{color:@danger; text-decoration:underline;}
+table.account-subscription-list.modifying-subscription tr.this-row a#save-modified-subscription:hover,
+table.account-subscription-list.modifying-subscription tr.this-row a#undo-modified-subscription:hover{ text-decoration:none;}
+
+
+.user-itemlist,
+.user-personal {
+	h2.user-title{
+		line-height:1;
+		padding-bottom:@bottomgutter;
+	}
+	.display-list .display-item{
+		margin-bottom:@bottomgutter;
+		padding-bottom:@bottomgutter;
+		.field-name{
+			padding-bottom:15px;
+		}
+		.field-view-edit-links{
+			padding-top:15px;
+		}
+	}
+}
+.user-personal{
+	.user-itemlist h3.user-title{padding-top:0; line-height:1;}
+}
+
+
+
+
+
+
+
+@mq2: @breakdance - 1;
+/* #Media Queries
+================================================== */
+
+	/* Smaller than standard 960 (devices and browsers) */
+	@media only screen and (max-width: 959px) {
+	}
+
+	/* All Mobile Sizes (devices and browser) */
+	@media only screen and (max-width: @mq2) {
+		.container-mucssle.responsive{
+			.product-list{
+				&.display-list{
+					.field-name{
+						font-size:1.3em;
+					}
+				}
+				.field-description{
+					display:none;
+				}
+			}	
+			
+			form.form-comments{
+				padding:1.5em;
+			}
+			
+			.search-result-url{
+				display:none;
+			}
+		}
+	}
+
+	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+	@media only screen and (min-width: 480px) and (max-width: @mq2) {
+	}
+
+	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+	@media only screen and (max-width: 499px) {
+		.container-mucssle.responsive{
+			/* grid goes to 2 per row */
+			.display-grid.display-gridcols-4,
+			.display-grid.display-gridcols-3,
+			.display-grid{
+				.display-item{
+					width:(100 - (1 * @sidegutter)) / 2;
+					clear:none!important;
+					margin-right:@sidegutter!important;
+					
+					&:nth-child(2n){
+						margin-right:0!important;
+					}
+					&:nth-child(2n+1){
+						clear:both!important;
+					}
+				}
+			}
+			
+			/* form comments inputs go 1 per row*/
+			form.form-comments{
+				padding:1em;
+			}
+			
+			.account-transaction-shipping,
+			.account-transaction-billing{display:none;}
+		}
+	}
+	@media only screen and (max-width: 349px) {
+		.container-mucssle.responsive{
+			/* grid goes to 1 per row */		
+			.display-grid.display-gridcols-4,
+			.display-grid.display-gridcols-3,
+			.display-grid.display-gridcols-2,
+			.display-grid{
+				.display-item{
+					width:100%;
+					margin-right:0!important;
+					clear:both!important;
+				}
+			}
+		}
+	}
+
+

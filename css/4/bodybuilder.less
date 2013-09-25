@@ -1,0 +1,161 @@
+/* BODYBUILDER GRID SYSTEM ///////////////////////////////////////////////////////////////////////////////// 
+
+Copyright 2013 @mtrozzo & @thatericsmith
+*/
+@bbpad: 5%;
+@bb4colpad: 5%;
+@bb3colpad: 6%;
+@bb2colpad: 8%;
+@bb1colpad: 10%;
+
+
+.bb-container{
+	padding:@bbpad / 2 @bbpad;
+}
+
+.bb-col,
+.bb-side-col,
+.bb-main-col{float:left;}
+.bb-four-col{
+	padding:0 @bb4colpad - @bbpad;
+	.bb-side-col{width:16.66666%; margin-right:3.7037%; }
+	.bb-main-col{
+		width:79.63%; 
+		.bb-col{
+			width:30.233%; 
+			margin-right:4.651%; 
+		
+			&:nth-child(3n){
+				margin-right:0; 
+			}
+		}
+	}
+	
+	&.bb-equal-cols{
+		.bb-side-col,
+		.bb-col{width:22.2222%; margin-right:3.7037%; }
+		.bb-col:nth-child(4n){margin-right:0;}
+		.bb-main-col{
+			width:74.07%;
+			.bb-col{
+				width:30.233%; 
+				margin-right:4.651%; 
+				&:nth-child(3n){
+					margin-right:0; 
+				}
+			}
+		}
+	}
+}
+
+@bb3sidecol:22.7273%;
+@bb3sidecolmargin:4.5455%;
+@bb3maincol:72.72727272%;
+@bb3col:46.875%;
+@bb3colmargin:6.25%;
+
+.bb-three-col{
+	padding:0 @bb3colpad - @bbpad;
+	.bb-side-col{width:@bb3sidecol; margin-right:@bb3sidecolmargin; }
+	.bb-main-col{
+		width:@bb3maincol; 
+		.bb-col{
+			width:@bb3col; 
+			margin-right:@bb3colmargin; 
+			&:nth-child(2n){
+				margin-right:0;
+			}
+		}
+	}
+	
+	&.bb-equal-cols{
+		.bb-col{
+			width:30.3030%; 
+			margin-right:4.5455%; 
+			
+			&:nth-child(3n){
+				margin-right:0;
+			}
+		}
+	}
+}
+
+
+.bb-two-col{
+	padding:0 @bb2colpad - @bbpad;
+	
+	.bb-side-col{
+		width:23.53%;
+		margin-right:5.8824%;
+	}
+	.bb-main-col{
+		width:70.5882%;
+	}
+	&.bb-equal-cols{
+		.bb-col{
+		 	width:47.0588%; 
+			margin-right:5.8824%; 
+			
+			&:nth-child(2n){
+				margin-right:0; 
+			}
+		}
+	}
+}
+
+.bb-one-col{
+	padding:0 @bb1colpad - @bbpad;
+	.bb-col,
+	.bb-main-col{
+		width:auto; 
+		margin-right:0; 
+		float:none;
+	}
+}
+
+@media only screen and (min-width:1025px) {
+	.container.responsive{
+		.bb-one-col,
+		.bb-two-col .bb-main-col{font-size:1.5em;}
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.container.responsive{
+		/* on 3 and 4 col, cols inside the main col should go to full width */
+		.bb-four-col{
+			.bb-three-col;
+			.display-grid .display-item{
+				width:@bb3col; 
+				margin-right:@bb3colmargin!important; 
+				clear:none!important;
+				&:nth-child(2n){
+					margin-right:0!important;
+				}
+				&:nth-child(2n+1){
+					clear:both!important;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 499px) {
+	.container.responsive{
+		/* all cols should go to full width */
+		.bb-four-col,
+		.bb-three-col,
+		.bb-two-col,
+		.bb-one-col{
+			padding:0 @bb1colpad - @bbpad;
+			.bb-side-col,
+			.bb-col,
+			.bb-main-col{
+				width:auto!important; 
+				margin-right:0!important; 
+				float:none!important;
+			}
+		}
+	}
+}
+

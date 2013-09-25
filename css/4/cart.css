@@ -1,0 +1,537 @@
+/* EDITABLE AREAS - COMMON COLORS AND TEXT */
+/*body text*/
+/*title text*/
+/*buttons, total text*/
+/*back*/
+/*alert background*/
+/*alert text*/
+/*drk grey nav*/
+/*lt grey blog date, footer*/
+/* cart border color */
+/* TYPOGRAPHY - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - -  */
+.mainfont {
+  font-family: "jubilat", Georgia, Times, serif;
+  font-weight: 200;
+  letter-spacing: .1em;
+}
+.buttonfont {
+  font-family: "quatro-slab", Georgia, Times, serif;
+  font-weight: 900;
+  letter-spacing: .1em;
+}
+.titlefont {
+  font-family: "quatro-slab", Georgia, Times, serif;
+  font-weight: 900;
+  letter-spacing: .1em;
+}
+.light {
+  font-weight: 200;
+}
+.normal {
+  font-weight: 400;
+}
+.bold {
+  font-weight: 700;
+}
+.ultra {
+  font-weight: 900;
+}
+.upper {
+  text-transform: uppercase;
+}
+/* OVERALL - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+/* Padding Fix */
+body {
+  padding: 0;
+}
+/*  overall font  */
+#fc_checkout_container *,
+#fc_receipt_container *,
+#fc_cart_container {
+  font-family: "jubilat", Georgia, Times, serif;
+  font-weight: 200;
+  letter-spacing: .1em;
+  font-size: 16px;
+}
+/* Header font */
+#fc_checkout_container h2,
+#fc_receipt_container h2,
+#fc_receipt_container h2 span.fc_text_alt {
+  font-family: "quatro-slab", Georgia, Times, serif;
+  font-weight: 900;
+  letter-spacing: .1em;
+  color: #4f1c04;
+  font-size: 20px;
+  border-bottom: thin solid #4f1c04;
+}
+/*  overall text color  */
+#fc_checkout_container *,
+#fc_receipt_container *,
+select#cc_exp_month,
+select#cc_exp_year,
+#fc_checkout_container input.fc_text_readonly,
+#fc_cart_table tfoot td input#fc_coupon,
+#fc_cart_table tfoot tr#fc_cart_foot_total td,
+#fc_cart_table th {
+  color: /*COLOR-2*/ #333333;
+}
+/* input boxes  */
+#fc_checkout_container input.fc_text {
+  background: /*COLOR-3*/ #eeeeee;
+  color: /*COLOR-2*/ #333333;
+}
+/* CONTAINER IMAGES & COLOR - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+#fc_cart_container {
+  background: url('images/tejas-logo-sm.png') no-repeat scroll left 0px;
+}
+#fc_checkout_container {
+  background: #ffffff;
+}
+#fc_receipt_container {
+  background: #ffffff;
+}
+/* BUTTONS with CSS - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+#cart-back-button,
+#fc_cart_container #fc_cart_controls_top a.fc_cart_update,
+#fc_cart_container #fc_cart_controls_bottom a.fc_cart_update,
+#fc_cart_container a.fc_cart_checkout,
+#fc_tb_closeWindowButtonBot,
+#fc_checkout_container .fc_account_message,
+.fc_cbox #cboxClose,
+.fc_cbox #cboxClose:hover,
+div#fc_continue a.fc_link_nav,
+#fc_complete_order_button,
+#fc_receipt_links a#fc_receipt_print_link,
+#fc_receipt_links a#fc_receipt_continue_link,
+#fc_receipt_links a#fc_receipt_continue_link,
+#fc_cancel_continue_shopping a {
+  background: #69be28;
+  margin-right: 0px;
+  display: block;
+  color: #ffffff;
+  font-size: 12px;
+  height: auto;
+  padding: 10px;
+  text-indent: 0;
+  text-align: center;
+  text-decoration: none;
+  font-family: "jubilat", Georgia, Times, serif;
+  font-weight: 200;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+#cart-back-button:hover,
+#fc_cart_container #fc_cart_controls_top a.fc_cart_update:hover,
+#fc_cart_container #fc_cart_controls_bottom a.fc_cart_update:hover,
+#fc_cart_container a.fc_cart_checkout:hover,
+#fc_tb_closeWindowButtonBot:hover,
+#fc_checkout_container .fc_account_message:hover,
+.fc_cbox #cboxClose:hover,
+.fc_cbox #cboxClose:hover:hover,
+div#fc_continue a.fc_link_nav:hover,
+#fc_complete_order_button:hover,
+#fc_receipt_links a#fc_receipt_print_link:hover,
+#fc_receipt_links a#fc_receipt_continue_link:hover,
+#fc_receipt_links a#fc_receipt_continue_link:hover,
+#fc_cancel_continue_shopping a:hover {
+  background: #83d742;
+}
+#fc_cart_container #fc_cart_controls_top a.fc_cart_update,
+#fc_cart_container #fc_cart_controls_bottom a.fc_cart_update {
+  width: 85px;
+}
+#cart-back-button {
+  display: none;
+  margin-top: 40px;
+  background: #004e1e;
+}
+#cart-back-button:hover {
+  background: #008132;
+}
+/* SPECIFIC COLORS, SIZING - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+/* Continue Shopping Button */
+#fc_cancel_continue_shopping a {
+  width: 50px;
+  font-size: 60%;
+}
+#fc_cancel_continue_shopping a,
+.fc_cbox #cboxClose {
+  background: #004e1e;
+}
+#fc_cancel_continue_shopping a:hover,
+.fc_cbox #cboxClose:hover {
+  background: #008132;
+}
+/* Cart Header */
+#fc_cart_table thead th {
+  color: #666666;
+}
+/* Subtotal Bar */
+#fc_cart_table tfoot tr#fc_cart_foot_subtotal td {
+  color: #4f1c04;
+  font-size: .8em;
+}
+/* Total Bar */
+#fc_cart_table tfoot tr#fc_cart_foot_total td {
+  color: #69be28 !important;
+  font-size: 1.15em;
+}
+#fc_cart_table tbody td.fc_cart_item_quantity input.fc_cart_item_quantity,
+#fc_cart_table tfoot td input#fc_coupon {
+  font-family: "jubilat", Georgia, Times, serif;
+  font-weight: 200;
+  letter-spacing: .1em;
+}
+/* Cart Item Name */
+#fc_cart_table tbody td span.fc_cart_item_name {
+  color: #4f1c04;
+  font-size: 1em;
+  text-transform: none;
+}
+#fc_checkout_cart #fc_cart_table tbody td span.fc_cart_item_name {
+  font-size: 1em;
+}
+/* Cart Margin */
+#fc_checkout_cart {
+  margin-top: 110px;
+}
+/* Account Message or Alert Bar */
+#fc_checkout_container .fc_account_message {
+  background: #69be28;
+  color: #ffffff;
+  text-transform: none;
+}
+/* Error Message */
+#fc_checkout_container label.fc_error {
+  text-align: center;
+  background: none;
+}
+/* Receipt Links */
+#fc_receipt_links a#fc_receipt_print_link {
+  width: 200px;
+}
+#fc_receipt_links a#fc_receipt_continue_link {
+  width: 300px;
+}
+/* Cart update anad Checkout Button width */
+#fc_cart_container #fc_cart_controls_top a.fc_cart_update,
+#fc_cart_container #fc_cart_controls_bottom a.fc_cart_update {
+  width: 145px;
+}
+#fc_cart_container a.fc_cart_checkout {
+  width: 115px;
+}
+/* Continue Button and Complete Order Button */
+div#fc_continue a.fc_link_nav {
+  width: 98px;
+}
+#fc_complete_order_button {
+  width: 180px;
+}
+div#fc_continue a.fc_link_nav,
+#fc_complete_order_button {
+  margin-left: 153px;
+}
+#fc_complete_order_button {
+  margin-left: 90px;
+  padding: 10px;
+  width: 253px;
+  font-size: 17px;
+}
+/* Major Buttons get button font */
+#fc_cart_container #fc_cart_controls_top a.fc_cart_update,
+#fc_cart_container #fc_cart_controls_bottom a.fc_cart_update,
+#fc_cart_container a.fc_cart_checkout,
+div#fc_continue a.fc_link_nav,
+#fc_complete_order_button {
+  font-family: "quatro-slab", Georgia, Times, serif;
+  font-weight: 900;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+/* cart table box margins */
+#fc_checkout_cart {
+  margin-bottom: 25px;
+  margin-top: 180px;
+}
+/* SPECIAL INSTRUCTIONS - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+select {
+  width: auto;
+}
+#fc_cart_container li.fc_cart_item_option.fc_cart_item_code,
+#fc_cart_container li.fc_cart_item_option.fc_cart_category_code,
+#fc_cart_container li.fc_cart_item_option.fc_cart_item_weight {
+  display: none;
+}
+li.fc_cart_item_v {
+  display: none;
+}
+#fc_cart_table tbody td .fc_cart_item_price_each {
+  display: none;
+}
+#fc_receipt_links a#fc_receipt_continue_link {
+  margin: 0 0 0 10px;
+  width: 217px;
+}
+.fc_cbox #cboxClose span {
+  display: none;
+}
+/* OTHER CHECKOUT STYLING - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+#fc_checkout_container,
+#fc_receipt_container {
+  padding-top: 0px;
+}
+#fc_checkout_cart {
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+#fc_checkout_container h2,
+#fc_receipt_container h2 {
+  background-image: none;
+  padding: 0px;
+  display: block;
+  height: auto;
+  border-width: 1px;
+  text-align: left;
+  text-transform: none;
+  letter-spacing: .03em;
+}
+#fc_checkout_cart #fc_cart_container {
+  backround: none;
+}
+#fc_checkout_container input.fc_text {
+  font-weight: 500;
+}
+#fc_checkout_container a.fc_link_nav,
+#fc_cart_container a.fc_link_nav,
+#fc_receipt_links a.fc_link_nav {
+  background-repeat: no-repeat;
+  display: block;
+  margin-left: 10px;
+  overflow: hidden;
+}
+#updateqtylinkbox {
+  padding: 5px;
+  text-align: right;
+}
+#fc_shipping_result a {
+  color: none;
+  text-decoration: underline;
+}
+#fc_checkout_container li fieldset,
+#fc_checkout_container div.fc_shipping_methods_inner label.fc_radio:hover {
+  background-color: none;
+}
+/* CART STYLING - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+#fc_cart_form {
+  padding: 90px 0 0;
+}
+#fc_cart_table {
+  border-spacing: 0px;
+  font-size: 16px;
+}
+#fc_cart_table thead th {
+  font-size: .8em;
+  line-height: 3;
+  text-transform: uppercase;
+  padding: 0 1em;
+}
+#fc_cart_table thead th#fc_cart_head_item {
+  width: 68%;
+}
+#fc_cart_table thead th#fc_cart_head_quantity {
+  width: 50px;
+}
+#fc_cart_table thead th#fc_cart_head_price {
+  width: 17%;
+}
+#fc_cart_table tbody tr,
+#fc_cart_table thead tr,
+#fc_cart_table tfoot tr {
+  background: none;
+}
+#fc_cart_table tbody tr {
+  background: none;
+}
+#fc_cart_table tbody td {
+  padding: 1em;
+  font-size: 1em;
+}
+#fc_cart_table tbody td .fc_cart_item_options {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+#fc_cart_table tbody td .fc_cart_item_price_each,
+#fc_cart_table tbody td .fc_cart_item_price_total {
+  display: block;
+}
+#fc_cart_table tbody td.fc_cart_item_quantity input.fc_cart_item_quantity {
+  font-size: 1em;
+  width: 20px;
+}
+#fc_cart_table tfoot td {
+  font-size: 1.1em;
+  line-height: 2;
+  padding: 0 1em;
+  border: none;
+}
+#fc_cart_table tfoot tr#fc_cart_foot_total td {
+  padding: 0 .625em;
+  background: transparent;
+}
+#fc_cart_table tfoot #fc_cart_foot_total td.fc_col1 {
+  text-align: left;
+}
+#fc_cart_table tfoot td input#fc_coupon {
+  font-size: 1em;
+  width: 80px;
+}
+/* Take out Paypal button */.fc_cart_controls a.fc_cart_checkout_paypal {
+  display: none;
+}
+.fc_cart_controls span.fc_cart_checkout_or {
+  display: none;
+}
+/* ALTERNATE CART WITH BORDERS ONLY  */
+#fc_cart_table tbody tr,
+#fc_cart_table thead tr,
+#fc_cart_table tfoot tr,
+#fc_cart_table tbody td.fc_cart_item_quantity input.fc_cart_item_quantity,
+#fc_cart_table tfoot td input#fc_coupon,
+#fc_cart_table td {
+  border: none;
+}
+#fc_cart_table tbody tr,
+#fc_cart_table thead tr,
+#fc_cart_table tfoot tr,
+#fc_cart_table tfoot td input#fc_coupon {
+  border: none;
+  border-bottom: thin solid #cccccc;
+  border-top: thin solid #cccccc;
+}
+#fc_cart_table tbody td.fc_cart_item_quantity input.fc_cart_item_quantity {
+  border: none;
+  background: #cccccc;
+}
+#fc_cart_table thead th,
+#fc_cart_table tfoot tr#fc_cart_foot_subtotal td,
+#fc_cart_table tfoot tr#fc_cart_foot_shipping td,
+#fc_cart_table tfoot tr#fc_cart_foot_shipping_tbd td,
+#fc_cart_table tfoot tr.fc_cart_foot_tax td,
+#fc_cart_table tfoot tr#fc_cart_foot_tax_tbd td,
+#fc_cart_table tfoot tr#fc_cart_foot_total,
+#fc_cart_table tfoot tr#fc_cart_foot_total td {
+  background: none;
+}
+/* item area background */
+.ac_results {
+  background-color: #69be28;
+  border: 1px solid #4f1c04;
+  overflow: hidden;
+  padding: 0;
+  z-index: 100000000;
+  color: #9A8479;
+}
+/* CART BACKGROUND OVERLAY - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  *//*#cboxOverlay {background:url('images/overlay.png') repeat scroll 0 0 transparent;}*/
+#cboxOverlay {
+  background: #333333;
+  opacity: .8;
+}
+#cboxLoadedContent {
+  height: 575px;
+}
+/* /////////////////////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////////////////////// */
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 767px) {
+  #fc_checkout_cart {
+    width: auto;
+    float: none;
+    margin-top: 0;
+  }
+  #fc_use_different_address,
+  #fc_copy_billing_address,
+  #fc_checkout_container li.fc_row_radio,
+  #fc_checkout_container li.fc_row_checkbox {
+    padding-left: 0;
+    width: 100%;
+  }
+  #fc_checkout_container div.fc_fieldset_container,
+  #fc_receipt_container div.fc_fieldset_container {
+    float: none;
+    margin-right: 0;
+    width: auto;
+    margin-top: 20px;
+  }
+  #fc_complete_order_button {
+    margin: 0 auto;
+    width: auto;
+  }
+  #fc_checkout_container label.fc_pre,
+  #fc_checkout_container span.fc_pre,
+  #fc_receipt_container span.fc_pre {
+    float: none;
+    display: block;
+    text-align: left;
+    width: auto;
+  }
+  #fc_checkout_container input.fc_text {
+    width: 96%;
+  }
+  div#fc_continue a.fc_link_nav {
+    width: auto;
+    margin: 0 auto;
+  }
+  #fc_cart_controls_top {
+    margin-top: 10px;
+  }
+  #fc_cart_controls_top,
+  #fc_cart_controls_bottom {
+    text-align: left;
+  }
+  #cart-back-button {
+    display: block;
+  }
+  #fc_cart_container a.fc_cart_checkout,
+  #fc_cart_container #fc_cart_controls_top a.fc_cart_update,
+  #fc_cart_container #fc_cart_controls_bottom a.fc_cart_update {
+    width: 35%;
+    margin-left: 2%;
+  }
+  #fc_cart_table tfoot tr#fc_cart_foot_total td {
+    font-size: .9em;
+  }
+  #fc_receipt_links {
+    float: none;
+    margin: 10px;
+  }
+  #fc_receipt_links a#fc_receipt_print_link {
+    display: block;
+    float: none;
+    margin: 0 0 10px;
+  }
+  #fc_receipt_links a#fc_receipt_continue_link {
+    display: block;
+    float: none;
+    margin: 0 0 10px;
+  }
+}
+/* print receipt */
+@media print {
+  header {
+    display: none;
+  }
+  body {
+    background: #fff!important;
+  }
+  #fc_receipt_links {
+    display: none!important;
+  }
+  #fc_receipt_billing_container {
+    page-break-before: always;
+  }
+}
