@@ -6641,7 +6641,7 @@ Copyright 2013 @mtrozzo & @thatericsmith
   column-gap: 30px;
   width: 100%;
 }
-.display-dynamicgrid img {
+.display-dynamicgrid .display-item {
   display: inline-block;
   margin-bottom: 30px;
   width: 100%;
@@ -7424,6 +7424,17 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
   }
   .container .search-result-url {
     display: none;
+  }
+  .display-dynamicgrid {
+    -moz-column-count: 2;
+    -moz-column-gap: 10px;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 10px;
+    column-count: 2;
+    column-gap: 10px;
+  }
+  .display-dynamicgrid .display-item {
+    margin-bottom: 10px;
   }
 }
 /* end media query*//* Landscape phones and down */
