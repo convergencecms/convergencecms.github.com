@@ -6632,6 +6632,20 @@ Copyright 2013 @mtrozzo & @thatericsmith
 .product-buy-table img {
   max-width: 100px;
 }
+.display-dynamicgrid {
+  -moz-column-count: 3;
+  -moz-column-gap: 30px;
+  -webkit-column-count: 3;
+  -webkit-column-gap: 30px;
+  column-count: 3;
+  column-gap: 30px;
+  width: 100%;
+}
+.display-dynamicgrid img {
+  display: inline-block;
+  margin-bottom: 30px;
+  width: 100%;
+}
 /* Blog Styles    ///////////////////////////////////////////////////////////////////////////////// */
 a.back-link {
   display: block;

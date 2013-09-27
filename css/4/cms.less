@@ -265,6 +265,26 @@ img {
 	img {max-width:@tableimagemaxwidth;}
 }
 
+// Dynamic Grid
+.dynamic-columns(@cols:3,@gap:30px) { // mixin for dynamic columns
+	-moz-column-count: @cols;
+	-moz-column-gap: @gap;
+	-webkit-column-count: @cols;
+	-webkit-column-gap: @gap;
+	column-count: @cols;
+	column-gap: @gap;
+}
+
+.display-dynamicgrid{
+	.dynamic-columns(3,30px);
+	width:100%;
+	
+	img{
+		display:inline-block;
+		margin-bottom:30px;
+		width:100%;
+	}
+}
 
 
 
