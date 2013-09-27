@@ -101,11 +101,6 @@ img {
 	height:auto;
 }
 
-/* IE FIXES */
-
-.ie8 {
-	img {max-width:none; width:100%;}
-}
 
 
 /* 2. MUCSSLE
@@ -122,9 +117,8 @@ img {
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////*/
-/*
+
 @import 'bodybuilder.less';
-*/
 
 
 /* 4. CONVERGENCE feature-specific starter styles for blog elements, forms, inputs, etc.
@@ -388,7 +382,7 @@ a.back-link {
 	.at300bs.at15t_compact {
 		margin:0!important;
 	}
-	.at300m {width:16px; height:16px;}
+.at300m {width:16px; height:16px;}
 }
 
 .addthis_toolbox.addthis_default_style .at300bs.at15t_compact {
@@ -436,25 +430,28 @@ form.form-comments {
     border: 1px solid #ebebeb;
 	border-radius:4px;
     margin: @bottomgutter 0;
-	padding:2.25em 0;
+	padding:2.25em;
     width: auto;
 	
-	h4 {
+	.form-comments-title {
 		text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.8);
 		padding:0 0 1em;
 	}
+	.form-comments-col1,
+	.form-comments-col2{
+		float:left;
+	}
+	.form-comments-col1{
+		width:32%;
+		margin-right:3%;
+	}
+	.form-comments-col2{
+		width:65%;
+	}
 	.control-group {
 		float: none;
-		&#control-group-captcha_code{
-			max-width:180px;
-		}
 	}
 
-	img#captcha{
-		width:100%;
-		display:block;
-		margin-bottom:10px;
-	}
 	input[type="text"],
 	input[type="email"]{padding:9px;height:40px;}
 	textarea{
@@ -926,7 +923,7 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
 @media (min-width: @screen-lg) {
 	body {
 		font-size:18px;
-		p {line-height:1.6em; padding:0 0 1.4em;}
+		p {line-height:1.6em; padding:0 0 1.4em;} 
 	}
 	header nav {
 		ul.nav.menu-type-main > li > a,
@@ -935,7 +932,7 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
 		}
 		ul.menu-type-main > li ul.menu-level-1 {font-size:.9em;}
 	}
-/* end media query*/}
+} /* end media query*/
 
 
 
@@ -954,7 +951,7 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
 		}
 		ul.menu-type-main > li ul.menu-level-1 {font-size:.9em;}
 	}
-/* end media query*/} 
+} /* end media query*/
 
 
 
@@ -988,15 +985,21 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
 		
 		form.form-comments{
 			padding:1.5em;
+			.form-comments-col1,
+			.form-comments-col2{
+				float:none;
+				width:100%;
+				margin:0;
+			}
 		}
-			
+		
 		.search-result-url{
 			display:none;
 		}
 	}
-	
-	
-/* end media query*/} 
+		
+
+} /* end media query*/ 
 
 
 
@@ -1033,22 +1036,6 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
 		.account-transaction-billing{display:none;}
 	}
 	
-	.c-pager {
-		left: 10px;
-	}
-	.form-fields .form-item label {
-		float: none;
-		margin: 0 0 5px;
-		text-align: left;
-	}
-	.form-fields .form-item select, .form-fields .form-item input {
-		float: none;
-		margin: 0 0 10px;
-		width: 90%;
-	}
-	form.form-module input.form-button-submit {
-		margin:0;
-	}
 	.imageleft img, img.imageleft,
 	.imageright img, img.imageright {
 		float: none;
@@ -1058,14 +1045,8 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
 		width: 100%;
 		border: none;
 	}
-	.slideshow.displaystyle-lightbox .slideshow-image, 
-	.slideshow.displaystyle-gallery .slideshow-image {
-		margin: 2.5%;
-		width: 45%;
-		img {width:100%;}
-	}
 
-/* end media query*/} 
+} /* end media query*/ 
 
 
 @media only screen and (max-width: 349px) {
@@ -1082,5 +1063,4 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
 			}
 		}
 	}
-/* end media query*/}
-
+} /* end media query*/ 

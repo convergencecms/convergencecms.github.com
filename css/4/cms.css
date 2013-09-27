@@ -5904,11 +5904,6 @@ img {
   max-width: 100%;
   height: auto;
 }
-/* IE FIXES */
-.ie8 img {
-  max-width: none;
-  width: 100%;
-}
 /* 2. MUCSSLE
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -6350,9 +6345,178 @@ img {
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////*/
-/*
-@import 'bodybuilder.less';
+/* BODYBUILDER GRID SYSTEM ///////////////////////////////////////////////////////////////////////////////// 
+
+Copyright 2013 @mtrozzo & @thatericsmith
 */
+.bb-container {
+  padding: 2.5% 5%;
+}
+.bb-col,
+.bb-side-col,
+.bb-main-col {
+  float: left;
+}
+.bb-four-col {
+  padding: 0 0%;
+}
+.bb-four-col .bb-side-col {
+  width: 16.66666%;
+  margin-right: 3.7037%;
+}
+.bb-four-col .bb-main-col {
+  width: 79.63%;
+}
+.bb-four-col .bb-main-col .bb-col {
+  width: 30.233%;
+  margin-right: 4.651%;
+}
+.bb-four-col .bb-main-col .bb-col:nth-child(3n) {
+  margin-right: 0;
+}
+.bb-four-col.bb-equal-cols .bb-side-col,
+.bb-four-col.bb-equal-cols .bb-col {
+  width: 22.2222%;
+  margin-right: 3.7037%;
+}
+.bb-four-col.bb-equal-cols .bb-col:nth-child(4n) {
+  margin-right: 0;
+}
+.bb-four-col.bb-equal-cols .bb-main-col {
+  width: 74.07%;
+}
+.bb-four-col.bb-equal-cols .bb-main-col .bb-col {
+  width: 30.233%;
+  margin-right: 4.651%;
+}
+.bb-four-col.bb-equal-cols .bb-main-col .bb-col:nth-child(3n) {
+  margin-right: 0;
+}
+.bb-three-col {
+  padding: 0 1%;
+}
+.bb-three-col .bb-side-col {
+  width: 22.7273%;
+  margin-right: 4.5455%;
+}
+.bb-three-col .bb-main-col {
+  width: 72.72727272%;
+}
+.bb-three-col .bb-main-col .bb-col {
+  width: 46.875%;
+  margin-right: 6.25%;
+}
+.bb-three-col .bb-main-col .bb-col:nth-child(2n) {
+  margin-right: 0;
+}
+.bb-three-col.bb-equal-cols .bb-col {
+  width: 30.3030%;
+  margin-right: 4.5455%;
+}
+.bb-three-col.bb-equal-cols .bb-col:nth-child(3n) {
+  margin-right: 0;
+}
+.bb-two-col {
+  padding: 0 3%;
+}
+.bb-two-col .bb-side-col {
+  width: 23.53%;
+  margin-right: 5.8824%;
+}
+.bb-two-col .bb-main-col {
+  width: 70.5882%;
+}
+.bb-two-col.bb-equal-cols .bb-col {
+  width: 47.0588%;
+  margin-right: 5.8824%;
+}
+.bb-two-col.bb-equal-cols .bb-col:nth-child(2n) {
+  margin-right: 0;
+}
+.bb-one-col {
+  padding: 0 5%;
+}
+.bb-one-col .bb-col,
+.bb-one-col .bb-main-col {
+  width: auto;
+  margin-right: 0;
+  float: none;
+}
+@media only screen and (min-width: 1025px) {
+  .container.responsive .bb-one-col,
+  .container.responsive .bb-two-col .bb-main-col {
+    font-size: 1.5em;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .container.responsive {
+    /* on 3 and 4 col, cols inside the main col should go to full width */
+  
+  }
+  .container.responsive .bb-four-col {
+    padding: 0 1%;
+  }
+  .container.responsive .bb-four-col .bb-side-col {
+    width: 22.7273%;
+    margin-right: 4.5455%;
+  }
+  .container.responsive .bb-four-col .bb-main-col {
+    width: 72.72727272%;
+  }
+  .container.responsive .bb-four-col .bb-main-col .bb-col {
+    width: 46.875%;
+    margin-right: 6.25%;
+  }
+  .container.responsive .bb-four-col .bb-main-col .bb-col:nth-child(2n) {
+    margin-right: 0;
+  }
+  .container.responsive .bb-four-col.bb-equal-cols .bb-col {
+    width: 30.3030%;
+    margin-right: 4.5455%;
+  }
+  .container.responsive .bb-four-col.bb-equal-cols .bb-col:nth-child(3n) {
+    margin-right: 0;
+  }
+  .container.responsive .bb-four-col .display-grid .display-item {
+    width: 46.875%;
+    margin-right: 6.25% !important;
+    clear: none!important;
+  }
+  .container.responsive .bb-four-col .display-grid .display-item:nth-child(2n) {
+    margin-right: 0!important;
+  }
+  .container.responsive .bb-four-col .display-grid .display-item:nth-child(2n+1) {
+    clear: both!important;
+  }
+}
+@media only screen and (max-width: 499px) {
+  .container.responsive {
+    /* all cols should go to full width */
+  
+  }
+  .container.responsive .bb-four-col,
+  .container.responsive .bb-three-col,
+  .container.responsive .bb-two-col,
+  .container.responsive .bb-one-col {
+    padding: 0 5%;
+  }
+  .container.responsive .bb-four-col .bb-side-col,
+  .container.responsive .bb-three-col .bb-side-col,
+  .container.responsive .bb-two-col .bb-side-col,
+  .container.responsive .bb-one-col .bb-side-col,
+  .container.responsive .bb-four-col .bb-col,
+  .container.responsive .bb-three-col .bb-col,
+  .container.responsive .bb-two-col .bb-col,
+  .container.responsive .bb-one-col .bb-col,
+  .container.responsive .bb-four-col .bb-main-col,
+  .container.responsive .bb-three-col .bb-main-col,
+  .container.responsive .bb-two-col .bb-main-col,
+  .container.responsive .bb-one-col .bb-main-col {
+    width: auto!important;
+    margin-right: 0!important;
+    float: none!important;
+  }
+}
 /* 4. CONVERGENCE feature-specific starter styles for blog elements, forms, inputs, etc.
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -6622,23 +6786,26 @@ form.form-comments {
   border: 1px solid #ebebeb;
   border-radius: 4px;
   margin: 4.651% 0;
-  padding: 2.25em 0;
+  padding: 2.25em;
   width: auto;
 }
-form.form-comments h4 {
+form.form-comments .form-comments-title {
   text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.8);
   padding: 0 0 1em;
 }
+form.form-comments .form-comments-col1,
+form.form-comments .form-comments-col2 {
+  float: left;
+}
+form.form-comments .form-comments-col1 {
+  width: 32%;
+  margin-right: 3%;
+}
+form.form-comments .form-comments-col2 {
+  width: 65%;
+}
 form.form-comments .control-group {
   float: none;
-}
-form.form-comments .control-group#control-group-captcha_code {
-  max-width: 180px;
-}
-form.form-comments img#captcha {
-  width: 100%;
-  display: block;
-  margin-bottom: 10px;
 }
 form.form-comments input[type="text"],
 form.form-comments input[type="email"] {
@@ -7196,8 +7363,8 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
   header nav ul.menu-type-main > li ul.menu-level-1 {
     font-size: .9em;
   }
-  /* end media query*/
 }
+/* end media query*/
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   
@@ -7212,8 +7379,8 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
   header nav ul.menu-type-main > li ul.menu-level-1 {
     font-size: .9em;
   }
-  /* end media query*/
 }
+/* end media query*/
 /* breakdance query*/
 @media only screen and (max-width: 768px) {
   body {
@@ -7235,12 +7402,17 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
   .container form.form-comments {
     padding: 1.5em;
   }
+  .container form.form-comments .form-comments-col1,
+  .container form.form-comments .form-comments-col2 {
+    float: none;
+    width: 100%;
+    margin: 0;
+  }
   .container .search-result-url {
     display: none;
   }
-  /* end media query*/
 }
-/* Landscape phones and down */
+/* end media query*//* Landscape phones and down */
 @media (max-width: 480px) {
   .container {
     /* grid goes to 2 per row */
@@ -7272,23 +7444,6 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
   .container .account-transaction-billing {
     display: none;
   }
-  .c-pager {
-    left: 10px;
-  }
-  .form-fields .form-item label {
-    float: none;
-    margin: 0 0 5px;
-    text-align: left;
-  }
-  .form-fields .form-item select,
-  .form-fields .form-item input {
-    float: none;
-    margin: 0 0 10px;
-    width: 90%;
-  }
-  form.form-module input.form-button-submit {
-    margin: 0;
-  }
   .imageleft img,
   img.imageleft,
   .imageright img,
@@ -7300,18 +7455,8 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
     width: 100%;
     border: none;
   }
-  .slideshow.displaystyle-lightbox .slideshow-image,
-  .slideshow.displaystyle-gallery .slideshow-image {
-    margin: 2.5%;
-    width: 45%;
-  }
-  .slideshow.displaystyle-lightbox .slideshow-image img,
-  .slideshow.displaystyle-gallery .slideshow-image img {
-    width: 100%;
-  }
-  /* end media query*/
 }
-@media only screen and (max-width: 349px) {
+/* end media query*/@media only screen and (max-width: 349px) {
   .container {
     /* grid goes to 1 per row */
   }
@@ -7323,5 +7468,5 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
     margin-right: 0!important;
     clear: both!important;
   }
-  /* end media query*/
 }
+/* end media query*/
