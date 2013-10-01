@@ -873,7 +873,7 @@ hr{border-color:@lightborder; border-width:1px 0 0;}
 .imageleft img, img.imageleft {
     float: left;
     height: auto;
-    margin: 0 25px 20px 0;
+    margin: 5px 25px 20px 0;
     padding-right: 25px;
     width: 300px;
 	border-right: 1px solid #999;
@@ -881,7 +881,7 @@ hr{border-color:@lightborder; border-width:1px 0 0;}
 .imageright img, img.imageright {
     float: right;
     height: auto;
-    margin: 0 0 25px 20px;
+    margin: 5px 0 25px 20px;
     padding-left: 25px;
     width: 300px;
 	border-left: 1px solid #CCC;
@@ -1079,15 +1079,8 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: @screen-lg) {
 	body {
-		font-size:18px;
+		font-size:20px;
 		p {line-height:1.6em; padding:0 0 1.4em;} 
-	}
-	header nav {
-		ul.nav.menu-type-main > li > a,
-		ul.nav.cartinfo > li > a {
-			font-size:.8em;
-		}
-		ul.menu-type-main > li ul.menu-level-1 {font-size:.9em;}
 	}
 } /* end media query*/
 
@@ -1100,13 +1093,7 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
 
 /* Larger Navs need resizing in desktops - enter your max width where it runs into the logo */
 @media (max-width: 992px) and (min-width: @screen-sm){
-	header nav {
-		ul.nav.menu-type-main > li > a,
-		ul.nav.cartinfo > li > a {
-			font-size:1em;
-		}
-		ul.menu-type-main > li ul.menu-level-1 {font-size:.9em;}
-	}
+	
 } /* end media query*/
 
 
@@ -1118,8 +1105,10 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
 
 /* breakdance query*/
 @media only screen and (max-width: @screen-sm) {
-	
-	
+	body {
+		font-size:18px;
+		p {line-height:1.6em; padding:0 0 1.4em;}
+	}
 	header {
 		// header nav //	
 		.navbar-collapse.in {
@@ -1174,10 +1163,7 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
 
 /* Landscape phones and down */
 @media (max-width: @screen-xs) {
-	body {
-		font-size:18px;
-		p {line-height:1.6em; padding:0 0 1.4em;}
-	}
+	
 	.container {
 		/* grid goes to 2 per row */
 		.display-grid.display-gridcols-4,
