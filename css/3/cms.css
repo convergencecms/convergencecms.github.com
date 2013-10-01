@@ -1,49 +1,8 @@
 /* 
-Start.css is a document that houses all of the features, reset and template styles for a site. 
-You can comment out or rewrite styles on a whim. We also import the MUCSSLE responsive grid.
-This stylesheet is run on LESS. Not familiar with LESS? You can either edit "start.css" directly, 
-or learn more about the Dynamic Stylesheet Language here: http://lesscss.org/ 
-and learn about the compiler here: http://incident57.com/less/
+CMS.css builds on top of Boostrap v3, and adds specific styles that help Convergence features such as Itemlists, Product Lists and Slideshows display in lists and grids. We call our Convergence Boilerplate "MuCSSle". To customize these styles, simply tweak them in your local "style.css" stylesheet. You can also turn Mucssle off in the Account features on your website.
 
-
-CONTENTS:
-
-0. LESS variables
-1. Reset Styles
-2. Mucssle Responsive Grid
-3. Convergence's custom version of Bootstrap
-4. Convergence starter styles for features
+This stylesheet is run on LESS. Not familiar with LESS? Learn more about the Dynamic Stylesheet Language here: http://lesscss.org/ and learn about the compiler here: http://incident57.com/less/
 */
-/* 0. LESS VARIABLES - customize your default experience
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////*/
-/* #Customize MUCSSLE - Pick Breakpoints that work for you - or leave the defaults, they are pretty cool as is.
-================================================== */
-/* Widest breakpoint - typically is 960 or 1200 - it's the thickest your container(s) will ever go */
-/* Breakdance point - typically this is 768 - from here on down, every column goes full-width */
-/* Colors
-================================================== */
-/* Color 1 in the WYSIWYG editor under Styles */
-/* Color 2 in the WYSIWYG editor under Styles */
-/* Color 3 in the WYSIWYG editor under Styles */
-/* Typography
-================================================== */
-/* Display Items (Blog Articles, Events, Products, Categories, Item List Items, Users)
-================================================== */
-/* Number of display items per row in a grid (default:3) */
-/* for some reason with LESS, you need to change this Xn value to what you chose for numperrow -working on a fix :) (default:3) */
-/* percent value between display items in a grid or an image and its fields in list view (default:4%) */
-/* value between display items on the bottom (default:30px) */
-/*don't let table images get out of hand, width-wise (default:200px) */
-/* BOOTSTRAP
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////////// */
 /*!
  * Bootstrap v3.0.0
  *
@@ -5832,12 +5791,6 @@ td.visible-print {
     display: none !important;
   }
 }
-/* 1. RESET STYLES
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////*/
 .left {
   float: left;
   display: inline;
@@ -5904,626 +5857,30 @@ img {
   max-width: 100%;
   height: auto;
 }
-/* 2. MUCSSLE
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////*/
-/* MUCSSLE
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-	mucssle V1.0
-	Copyright 2012, Eric Smith
-	"pump your site uuuuuup."  sorry - my only Arnold joke, I promise.
-	
-	Clearly I would be nowhere without the help of 
-	Dave Gamache and www.getskeleton.com
-	
-	Free to use under the MIT license.
-	http://www.opensource.org/licenses/mit-license.php
-	10/12/2012
-
-
-	Table of Contents
-==================================================
-	#Customize with LESS
-    --
-	#Base Grid
-    #Media Queries
-    #Clearing
-	--    
-	#Your CSS
-    #Your Media Queries
-	
-*/
-/* #Base Grid - NO REAL NEED TO MODIFY THIS SECTION
-================================================== */
-.container-mucssle {
-  position: relative;
-  width: 1200px;
-  margin: 0 auto;
-  padding: 0;
+.clearfix {
+  *zoom: 1;
 }
-.column,
-.columns {
-  float: left;
-  display: inline;
-  margin-left: 1.0416666665% !important;
-  margin-right: 1.0416666665% !important;
-}
-.container-mucssle .row {
-  margin-bottom: 2.083333333%;
-}
-/* Nested Column Classes */
-.column.alpha,
-.columns.alpha {
-  margin-left: 0!important;
-}
-.column.omega,
-.columns.omega {
-  margin-right: 0!important;
-}
-.container-mucssle {
-  /* Base Grid */
-
-  /* Offsets */
-
-}
-.container-mucssle .one.column {
-  width: 4.166666666%;
-}
-.container-mucssle .columns.two {
-  width: 10.416666665000001%;
-}
-.container-mucssle .columns.three {
-  width: 16.666666664%;
-}
-.container-mucssle .columns.four {
-  width: 22.916666663%;
-}
-.container-mucssle .columns.five {
-  width: 29.166666662000004%;
-}
-.container-mucssle .columns.six {
-  width: 35.416666661%;
-}
-.container-mucssle .columns.seven {
-  width: 41.666666660000004%;
-}
-.container-mucssle .columns.eight {
-  width: 47.916666659%;
-}
-.container-mucssle .columns.nine {
-  width: 54.166666658%;
-}
-.container-mucssle .columns.ten {
-  width: 60.41666665700001%;
-}
-.container-mucssle .columns.eleven {
-  width: 66.666666656%;
-}
-.container-mucssle .columns.twelve {
-  width: 72.916666655%;
-}
-.container-mucssle .columns.thirteen {
-  width: 79.16666665400001%;
-}
-.container-mucssle .columns.fourteen {
-  width: 85.41666665300001%;
-}
-.container-mucssle .columns.fifteen {
-  width: 91.666666652%;
-}
-.container-mucssle .columns.sixteen {
-  width: 97.91666665100001%;
-}
-.container-mucssle .one-third.column {
-  width: 31.249999995%;
-}
-.container-mucssle .two-thirds.column {
-  width: 64.583333323%;
-}
-.container-mucssle .alpha.one.column,
-.container-mucssle .omega.one.column {
-  width: 5.2083333325000005%;
-}
-.container-mucssle .alpha.columns.two,
-.container-mucssle .omega.columns.two {
-  width: 11.4583333315%;
-}
-.container-mucssle .alpha.columns.three,
-.container-mucssle .omega.columns.three {
-  width: 17.7083333305%;
-}
-.container-mucssle .alpha.columns.four,
-.container-mucssle .omega.columns.four {
-  width: 23.9583333295%;
-}
-.container-mucssle .alpha.columns.five,
-.container-mucssle .omega.columns.five {
-  width: 30.208333328500004%;
-}
-.container-mucssle .alpha.columns.six,
-.container-mucssle .omega.columns.six {
-  width: 36.4583333275%;
-}
-.container-mucssle .alpha.columns.seven,
-.container-mucssle .omega.columns.seven {
-  width: 42.708333326500004%;
-}
-.container-mucssle .alpha.columns.eight,
-.container-mucssle .omega.columns.eight {
-  width: 48.9583333255%;
-}
-.container-mucssle .alpha.columns.nine,
-.container-mucssle .omega.columns.nine {
-  width: 55.208333324499996%;
-}
-.container-mucssle .alpha.columns.ten,
-.container-mucssle .omega.columns.ten {
-  width: 61.45833332350001%;
-}
-.container-mucssle .alpha.columns.eleven,
-.container-mucssle .omega.columns.eleven {
-  width: 67.70833332250001%;
-}
-.container-mucssle .alpha.columns.twelve,
-.container-mucssle .omega.columns.twelve {
-  width: 73.9583333215%;
-}
-.container-mucssle .alpha.columns.thirteen,
-.container-mucssle .omega.columns.thirteen {
-  width: 80.20833332050002%;
-}
-.container-mucssle .alpha.columns.fourteen,
-.container-mucssle .omega.columns.fourteen {
-  width: 86.45833331950001%;
-}
-.container-mucssle .alpha.columns.fifteen,
-.container-mucssle .omega.columns.fifteen {
-  width: 92.70833331850001%;
-}
-.container-mucssle .alpha.columns.sixteen,
-.container-mucssle .omega.columns.sixteen {
-  width: 98.95833331750002%;
-}
-.container-mucssle .alpha.one-third.column,
-.container-mucssle .omega.one-third.column {
-  width: 32.2916666615%;
-}
-.container-mucssle .alpha.two-thirds.column,
-.container-mucssle .omega.two-thirds.column {
-  width: 64.583333323%;
-}
-.container-mucssle .alpha.omega.one.column {
-  width: 6.249999999%;
-}
-.container-mucssle .alpha.omega.columns.two {
-  width: 12.499999998%;
-}
-.container-mucssle .alpha.omega.columns.three {
-  width: 18.749999997%;
-}
-.container-mucssle .alpha.omega.columns.four {
-  width: 24.999999996%;
-}
-.container-mucssle .alpha.omega.columns.five {
-  width: 31.249999995000003%;
-}
-.container-mucssle .alpha.omega.columns.six {
-  width: 37.499999994%;
-}
-.container-mucssle .alpha.omega.columns.seven {
-  width: 43.749999993%;
-}
-.container-mucssle .alpha.omega.columns.eight {
-  width: 49.999999992%;
-}
-.container-mucssle .alpha.omega.columns.nine {
-  width: 56.249999990999996%;
-}
-.container-mucssle .alpha.omega.columns.ten {
-  width: 62.499999990000006%;
-}
-.container-mucssle .alpha.omega.columns.eleven {
-  width: 68.749999989%;
-}
-.container-mucssle .alpha.omega.columns.twelve {
-  width: 74.999999988%;
-}
-.container-mucssle .alpha.omega.columns.thirteen {
-  width: 81.24999998700001%;
-}
-.container-mucssle .alpha.omega.columns.fourteen {
-  width: 87.499999986%;
-}
-.container-mucssle .alpha.omega.columns.fifteen {
-  width: 93.74999998500002%;
-}
-.container-mucssle .alpha.omega.columns.sixteen {
-  width: 99.999999984%;
-}
-.container-mucssle .alpha.omega.one-third.column {
-  width: 33.333333328%;
-}
-.container-mucssle .alpha.omega.two-thirds.column {
-  width: 66.666666656%;
-}
-.container-mucssle .offset-by-half {
-  margin-left: 4.166666666%;
-}
-.container-mucssle .offset-by-one {
-  margin-left: 7.2916666655%;
-}
-.container-mucssle .offset-by-two {
-  margin-left: 13.5416666645%;
-}
-.container-mucssle .offset-by-three {
-  margin-left: 19.7916666635%;
-}
-.container-mucssle .offset-by-four {
-  margin-left: 26.0416666625%;
-}
-.container-mucssle .offset-by-five {
-  margin-left: 32.2916666615%;
-}
-.container-mucssle .offset-by-six {
-  margin-left: 38.5416666605%;
-}
-.container-mucssle .offset-by-seven {
-  margin-left: 44.7916666595%;
-}
-.container-mucssle .offset-by-eight {
-  margin-left: 51.0416666585%;
-}
-.container-mucssle .offset-by-nine {
-  margin-left: 57.291666657499995%;
-}
-.container-mucssle .offset-by-ten {
-  margin-left: 63.5416666565%;
-}
-.container-mucssle .offset-by-eleven {
-  margin-left: 69.79166665550001%;
-}
-.container-mucssle .offset-by-twelve {
-  margin-left: 76.0416666545%;
-}
-.container-mucssle .offset-by-thirteen {
-  margin-left: 82.2916666535%;
-}
-.container-mucssle .offset-by-fourteen {
-  margin-left: 88.54166665250001%;
-}
-.container-mucssle .offset-by-fifteen {
-  margin-left: 94.79166665150001%;
-}
-/*  #Media Queries - NO REAL NEED TO MODIFY THIS SECTION
-================================================== */
-@media only screen and (max-width: 1199px) {
-  .container-mucssle.responsive {
-    width: 95.833333334%;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .container-mucssle.responsive {
-    width: 95.833333334%;
-  }
-  .container-mucssle.responsive .columns,
-  .container-mucssle.responsive .column {
-    margin: 0!important;
-  }
-  .container-mucssle.responsive .column.one-third,
-  .container-mucssle.responsive .column.two-thirds,
-  .container-mucssle.responsive .column.one {
-    width: 100%;
-  }
-  .container-mucssle.responsive .columns.two,
-  .container-mucssle.responsive .columns.three,
-  .container-mucssle.responsive .columns.four,
-  .container-mucssle.responsive .columns.five,
-  .container-mucssle.responsive .columns.six,
-  .container-mucssle.responsive .columns.seven,
-  .container-mucssle.responsive .columns.eight,
-  .container-mucssle.responsive .columns.nine,
-  .container-mucssle.responsive .columns.ten,
-  .container-mucssle.responsive .columns.eleven,
-  .container-mucssle.responsive .columns.twelve,
-  .container-mucssle.responsive .columns.thirteen,
-  .container-mucssle.responsive .columns.fourteen,
-  .container-mucssle.responsive .columns.fifteen,
-  .container-mucssle.responsive .columns.sixteen {
-    width: 100%;
-  }
-  .container-mucssle.responsive .alpha.column.one-third,
-  .container-mucssle.responsive .omega.column.one-third,
-  .container-mucssle.responsive .alpha.omega.column.one-third,
-  .container-mucssle.responsive .alpha.column.two-thirds,
-  .container-mucssle.responsive .omega.column.two-thirds,
-  .container-mucssle.responsive .alpha.omega.column.two-thirds,
-  .container-mucssle.responsive .alpha.column.one,
-  .container-mucssle.responsive .omega.column.one,
-  .container-mucssle.responsive .alpha.omega.column.one {
-    width: 100%;
-  }
-  .container-mucssle.responsive .alpha.columns.two,
-  .container-mucssle.responsive .omega.columns.two,
-  .container-mucssle.responsive .alpha.omega.columns.two,
-  .container-mucssle.responsive .alpha.columns.three,
-  .container-mucssle.responsive .omega.columns.three,
-  .container-mucssle.responsive .alpha.omega.columns.three,
-  .container-mucssle.responsive .alpha.columns.four,
-  .container-mucssle.responsive .omega.columns.four,
-  .container-mucssle.responsive .alpha.omega.columns.four,
-  .container-mucssle.responsive .alpha.columns.five,
-  .container-mucssle.responsive .omega.columns.five,
-  .container-mucssle.responsive .alpha.omega.columns.five,
-  .container-mucssle.responsive .alpha.columns.six,
-  .container-mucssle.responsive .omega.columns.six,
-  .container-mucssle.responsive .alpha.omega.columns.six,
-  .container-mucssle.responsive .alpha.columns.seven,
-  .container-mucssle.responsive .omega.columns.seven,
-  .container-mucssle.responsive .alpha.omega.columns.seven,
-  .container-mucssle.responsive .alpha.columns.eight,
-  .container-mucssle.responsive .omega.columns.eight,
-  .container-mucssle.responsive .alpha.omega.columns.eight,
-  .container-mucssle.responsive .alpha.columns.nine,
-  .container-mucssle.responsive .omega.columns.nine,
-  .container-mucssle.responsive .alpha.omega.columns.nine,
-  .container-mucssle.responsive .alpha.columns.ten,
-  .container-mucssle.responsive .omega.columns.ten,
-  .container-mucssle.responsive .alpha.omega.columns.ten,
-  .container-mucssle.responsive .alpha.columns.eleven,
-  .container-mucssle.responsive .omega.columns.eleven,
-  .container-mucssle.responsive .alpha.omega.columns.eleven,
-  .container-mucssle.responsive .alpha.columns.twelve,
-  .container-mucssle.responsive .omega.columns.twelve,
-  .container-mucssle.responsive .alpha.omega.columns.twelve,
-  .container-mucssle.responsive .alpha.columns.thirteen,
-  .container-mucssle.responsive .omega.columns.thirteen,
-  .container-mucssle.responsive .alpha.omega.columns.thirteen,
-  .container-mucssle.responsive .alpha.columns.fourteen,
-  .container-mucssle.responsive .omega.columns.fourteen,
-  .container-mucssle.responsive .alpha.omega.columns.fourteen,
-  .container-mucssle.responsive .alpha.columns.fifteen,
-  .container-mucssle.responsive .omega.columns.fifteen,
-  .container-mucssle.responsive .alpha.omega.columns.fifteen,
-  .container-mucssle.responsive .alpha.columns.sixteen,
-  .container-mucssle.responsive .omega.columns.sixteen,
-  .container-mucssle.responsive .alpha.omega.columns.sixteen {
-    width: 100%;
-  }
-}
-/* #Clearing - NO REAL NEED TO MODIFY THIS SECTION
-================================================== */
-/* Self Clearing Goodness */
-.container-mucssle:after {
-  content: "\0020";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
-}
-/* Use clearfix class on parent to clear nested columns,
-    or wrap each row of columns in a <div class="row"> */
 .clearfix:before,
-.clearfix:after,
-.container-mucssle .row:before,
-.container-mucssle .row:after {
-  content: '\0020';
-  display: block;
-  overflow: hidden;
-  visibility: hidden;
-  width: 0;
-  height: 0;
+.clearfix:after {
+  display: table;
+  line-height: 0;
+  content: "";
 }
-.container-mucssle .row:after,
 .clearfix:after {
   clear: both;
 }
-.container-mucssle .row,
-.clearfix {
-  zoom: 1;
+.alpha {
+  padding-left: 0;
 }
-/* You can also use a <br class="clear" /> to clear columns */
-.clear {
-  clear: both;
-  display: block;
-  overflow: hidden;
-  visibility: hidden;
-  width: 0;
-  height: 0;
+.omega {
+  padding-right: 0;
 }
-/* 3. BODYBUILDER GRID SYSTEM 
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////*/
-/* BODYBUILDER GRID SYSTEM ///////////////////////////////////////////////////////////////////////////////// 
-
-Copyright 2013 @mtrozzo & @thatericsmith
-*/
-.bb-container {
-  padding: 2.5% 5%;
+.alpha.omega {
+  padding-left: 0;
+  padding-right: 0;
 }
-.bb-col,
-.bb-side-col,
-.bb-main-col {
-  float: left;
-}
-.bb-four-col {
-  padding: 0 0%;
-}
-.bb-four-col .bb-side-col {
-  width: 16.66666%;
-  margin-right: 3.7037%;
-}
-.bb-four-col .bb-main-col {
-  width: 79.63%;
-}
-.bb-four-col .bb-main-col .bb-col {
-  width: 30.233%;
-  margin-right: 4.651%;
-}
-.bb-four-col .bb-main-col .bb-col:nth-child(3n) {
-  margin-right: 0;
-}
-.bb-four-col.bb-equal-cols .bb-side-col,
-.bb-four-col.bb-equal-cols .bb-col {
-  width: 22.2222%;
-  margin-right: 3.7037%;
-}
-.bb-four-col.bb-equal-cols .bb-col:nth-child(4n) {
-  margin-right: 0;
-}
-.bb-four-col.bb-equal-cols .bb-main-col {
-  width: 74.07%;
-}
-.bb-four-col.bb-equal-cols .bb-main-col .bb-col {
-  width: 30.233%;
-  margin-right: 4.651%;
-}
-.bb-four-col.bb-equal-cols .bb-main-col .bb-col:nth-child(3n) {
-  margin-right: 0;
-}
-.bb-three-col {
-  padding: 0 1%;
-}
-.bb-three-col .bb-side-col {
-  width: 22.7273%;
-  margin-right: 4.5455%;
-}
-.bb-three-col .bb-main-col {
-  width: 72.72727272%;
-}
-.bb-three-col .bb-main-col .bb-col {
-  width: 46.875%;
-  margin-right: 6.25%;
-}
-.bb-three-col .bb-main-col .bb-col:nth-child(2n) {
-  margin-right: 0;
-}
-.bb-three-col.bb-equal-cols .bb-col {
-  width: 30.3030%;
-  margin-right: 4.5455%;
-}
-.bb-three-col.bb-equal-cols .bb-col:nth-child(3n) {
-  margin-right: 0;
-}
-.bb-two-col {
-  padding: 0 3%;
-}
-.bb-two-col .bb-side-col {
-  width: 23.53%;
-  margin-right: 5.8824%;
-}
-.bb-two-col .bb-main-col {
-  width: 70.5882%;
-}
-.bb-two-col.bb-equal-cols .bb-col {
-  width: 47.0588%;
-  margin-right: 5.8824%;
-}
-.bb-two-col.bb-equal-cols .bb-col:nth-child(2n) {
-  margin-right: 0;
-}
-.bb-one-col {
-  padding: 0 5%;
-}
-.bb-one-col .bb-col,
-.bb-one-col .bb-main-col {
-  width: auto;
-  margin-right: 0;
-  float: none;
-}
-@media only screen and (min-width: 1025px) {
-  .container.responsive .bb-one-col,
-  .container.responsive .bb-two-col .bb-main-col {
-    font-size: 1.5em;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .container.responsive {
-    /* on 3 and 4 col, cols inside the main col should go to full width */
-  
-  }
-  .container.responsive .bb-four-col {
-    padding: 0 1%;
-  }
-  .container.responsive .bb-four-col .bb-side-col {
-    width: 22.7273%;
-    margin-right: 4.5455%;
-  }
-  .container.responsive .bb-four-col .bb-main-col {
-    width: 72.72727272%;
-  }
-  .container.responsive .bb-four-col .bb-main-col .bb-col {
-    width: 46.875%;
-    margin-right: 6.25%;
-  }
-  .container.responsive .bb-four-col .bb-main-col .bb-col:nth-child(2n) {
-    margin-right: 0;
-  }
-  .container.responsive .bb-four-col.bb-equal-cols .bb-col {
-    width: 30.3030%;
-    margin-right: 4.5455%;
-  }
-  .container.responsive .bb-four-col.bb-equal-cols .bb-col:nth-child(3n) {
-    margin-right: 0;
-  }
-  .container.responsive .bb-four-col .display-grid .display-item {
-    width: 46.875%;
-    margin-right: 6.25% !important;
-    clear: none!important;
-  }
-  .container.responsive .bb-four-col .display-grid .display-item:nth-child(2n) {
-    margin-right: 0!important;
-  }
-  .container.responsive .bb-four-col .display-grid .display-item:nth-child(2n+1) {
-    clear: both!important;
-  }
-}
-@media only screen and (max-width: 499px) {
-  .container.responsive {
-    /* all cols should go to full width */
-  
-  }
-  .container.responsive .bb-four-col,
-  .container.responsive .bb-three-col,
-  .container.responsive .bb-two-col,
-  .container.responsive .bb-one-col {
-    padding: 0 5%;
-  }
-  .container.responsive .bb-four-col .bb-side-col,
-  .container.responsive .bb-three-col .bb-side-col,
-  .container.responsive .bb-two-col .bb-side-col,
-  .container.responsive .bb-one-col .bb-side-col,
-  .container.responsive .bb-four-col .bb-col,
-  .container.responsive .bb-three-col .bb-col,
-  .container.responsive .bb-two-col .bb-col,
-  .container.responsive .bb-one-col .bb-col,
-  .container.responsive .bb-four-col .bb-main-col,
-  .container.responsive .bb-three-col .bb-main-col,
-  .container.responsive .bb-two-col .bb-main-col,
-  .container.responsive .bb-one-col .bb-main-col {
-    width: auto!important;
-    margin-right: 0!important;
-    float: none!important;
-  }
-}
-/* 4. CONVERGENCE feature-specific starter styles for blog elements, forms, inputs, etc.
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////////// */
-/* GENERIC DISPLAY ITEMS (PRODUCTS, CATEGORIES, ITEMS, USERS) ///////////////////////////////////////////////////////////////////////////////// */
+/* GENERIC DISPLAY ITEMS (PRODUCTS, CATEGORIES, ITEMS, USERS) 
+///////////////////////////////////////////////////////////////////////////////// */
 .display-image {
   max-width: 100%;
 }
@@ -6598,7 +5955,7 @@ Copyright 2013 @mtrozzo & @thatericsmith
   margin-right: 0px!important;
 }
 .display-list {
-  zoom: 1;
+  *zoom: 1;
 }
 .display-list .display-item {
   float: none;
@@ -6646,7 +6003,8 @@ Copyright 2013 @mtrozzo & @thatericsmith
   margin-bottom: 30px;
   width: 100%;
 }
-/* Blog Styles    ///////////////////////////////////////////////////////////////////////////////// */
+/* Blog Styles    
+///////////////////////////////////////////////////////////////////////////////// */
 a.back-link {
   display: block;
   font-size: 75%;
@@ -6830,12 +6188,14 @@ form.form-comments textarea {
   height: 126px;
   padding: 9px;
 }
-/* Calendar   ///////////////////////////////////////////////////////////////////////////////// */
+/* Calendar   
+///////////////////////////////////////////////////////////////////////////////// */
 .fc-header-title h2 {
   margin: 0;
   padding: 0;
 }
-/* Filtering   ///////////////////////////////////////////////////////////////////////////////// */
+/* Filtering   
+///////////////////////////////////////////////////////////////////////////////// */
 ul.filter-list {
   list-style: none;
   margin: 0;
@@ -6845,19 +6205,22 @@ ul.filter-list {
 #datasearch-form input {
   width: 100%;
 }
-/* Forms   ///////////////////////////////////////////////////////////////////////////////// */
+/* Forms  
+ ///////////////////////////////////////////////////////////////////////////////// */
 label.error,
 .form-item-required-symbol {
   color: #ee0000 !important;
 }
-/* MENUS   ///////////////////////////////////////////////////////////////////////////////// */
+/* MENUS   
+///////////////////////////////////////////////////////////////////////////////// */
 ul.menu,
 ul.menu ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-/* Photo Slideshows   ///////////////////////////////////////////////////////////////////////////////// */
+/* Photo Slideshows  
+ ///////////////////////////////////////////////////////////////////////////////// */
 /* FlexSlider Default Theme
 *********************************/
 .flexslider {
@@ -7028,7 +6391,8 @@ ul.menu ul {
   -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
-/* Products   ///////////////////////////////////////////////////////////////////////////////// */
+/* Products   
+///////////////////////////////////////////////////////////////////////////////// */
 /* product listing */
 .product-list .field-price {
   font-size: 1.3em;
@@ -7139,7 +6503,8 @@ h3.subcategoryname {
 .product-variant-table td.product-col-qty .input-append {
   margin-bottom: 0;
 }
-/* BREADCRUMB   ///////////////////////////////////////////////////////////////////////////////// */
+/* BREADCRUMB   
+///////////////////////////////////////////////////////////////////////////////// */
 .breadcrumb {
   color: #999999;
   display: block;
@@ -7157,7 +6522,8 @@ h3.subcategoryname {
 .breadcrumb-product .last-crumb {
   display: none;
 }
-/* SEARCH   ///////////////////////////////////////////////////////////////////////////////// */
+/* SEARCH   
+///////////////////////////////////////////////////////////////////////////////// */
 .search-results-container p {
   padding: 0;
   margin: 0;
@@ -7187,14 +6553,16 @@ h3.subcategoryname {
   margin: 0;
   padding: 0;
 }
-/* SITEMAP   ///////////////////////////////////////////////////////////////////////////////// */
+/* SITEMAP   
+///////////////////////////////////////////////////////////////////////////////// */
 ul.menu-type-sitemap {
   margin-left: 0;
 }
 ul.menu-type-sitemap li ul {
   margin-left: 4.651%;
 }
-/* TEXT   ///////////////////////////////////////////////////////////////////////////////// */
+/* TEXT  
+ ///////////////////////////////////////////////////////////////////////////////// */
 ul,
 ol {
   margin: 0 10% 1em;
@@ -7255,12 +6623,14 @@ table#menu_bithtml_bithtml_styleselect_menu_tbl tr#mce_6 a span {
   background: #aaaaaa !important;
   border-color: #aaaaaa !important;
 }
-/* TWITTER   ///////////////////////////////////////////////////////////////////////////////// */
-.twitter-list {
+/* TWITTER   
+///////////////////////////////////////////////////////////////////////////////// */
+ul.twitter-list {
   margin-left: 0;
   margin-right: 0;
+  padding: 0;
 }
-.twitter-list .tweet {
+ul.twitter-list .tweet {
   padding-bottom: 1em;
   list-style: none;
 }
@@ -7395,6 +6765,13 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
   }
 }
 /* end media query*/
+@media (min-width: 769px) and (max-width: 1199px) {
+  .container {
+    max-width: none;
+    width: 90%;
+    /* makes BS grid -sm and -md one fluid step */
+  }
+}
 /* breakdance query*/
 @media only screen and (max-width: 768px) {
   body {
