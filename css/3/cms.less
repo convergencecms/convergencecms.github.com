@@ -547,12 +547,9 @@ ul.menu ul
 .slideshow-direction-nav a {width: 30px; height: 30px; margin: -20px 0 0; display: block; background: url(http://www.convergencecms.info/resources/images/bg_direction_nav.png) no-repeat 0 0; position: absolute; top: 50%; z-index: 10; cursor: pointer; text-indent: -9999px; opacity: 0; -webkit-transition: all .3s ease;}
 .slideshow-direction-nav .slideshow-next {background-position: 100% 0;}
 .slideshow-direction-nav {
-	.slideshow-next {right: 15px;}
-	.slideshow-prev {left: 15px;}
+	.slideshow-next {right: 15px; opacity: 0.5;}
+	.slideshow-prev {left: 15px; opacity: 0.5;}
 }
-.flexslider:hover .slideshow-next {opacity: 0.8;}
-.flexslider:hover .slideshow-prev {opacity: 0.8;}
-
 .flexslider:hover .slideshow-next:hover, .flexslider:hover .slideshow-prev:hover {opacity: 1;}
 .slideshow-direction-nav .slideshow-disabled {opacity: .3!important; filter:alpha(opacity=30); cursor: default;}
 
@@ -582,9 +579,6 @@ ul.menu ul
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
     width: 96%;
 }
-
-.slideshow-direction-nav .slideshow-prev {opacity: 1; left: 0;}
-.slideshow-direction-nav .slideshow-next {opacity: 1; right: 0;}
 
 
 
@@ -625,6 +619,7 @@ ul.menu ul
 		.field-price{
 			color: @notsoimportant;
 		}
+		
 	}
 	
 	&.display-list{
@@ -634,6 +629,17 @@ ul.menu ul
 		.field-price{
 			padding-bottom:6px;
 		}
+		.field-option {
+			display:block;
+			float:left;
+			margin:20px 10px 10px 0;
+		}
+		.field-quantity {
+			margin:20px 10px 10px 0;
+		}	
+	}
+	.input-group {
+		width: 35%;
 	}
 	
 	.field.customfield,
@@ -644,10 +650,7 @@ ul.menu ul
 		font-size:80%;
 	}
 	.product-rating.product-no-ratings{display:none;}
-	
 }
-
-
 
 /* categories */
 h3.subcategoryname {clear:both;}
@@ -730,6 +733,13 @@ h3.subcategoryname {clear:both;}
 				margin-bottom:0;
 			}
 		}
+	}
+}
+.product-form {
+	input.product-form-quantity {
+		float:left;
+		width:20%;
+		margin-right: 5px;
 	}
 }
 
@@ -868,7 +878,8 @@ ul.twitter-list{
 
 
 
-/* USERS   ///////////////////////////////////////////////////////////////////////////////// */
+/* USERS   
+///////////////////////////////////////////////////////////////////////////////// */
 
 .userlist{
 	&.display-grid{
@@ -897,7 +908,9 @@ ul.twitter-list{
 	}
 }
 
-/* USER ACCOUNTS   ///////////////////////////////////////////////////////////////////////////////// */
+/* USER ACCOUNTS   
+///////////////////////////////////////////////////////////////////////////////// */
+
 .user-account-section table{}
 .user-account-section table {border-width:0px; width:100%;}
 
@@ -951,6 +964,30 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
 .user-personal{
 	.user-itemlist h3.user-title{padding-top:0; line-height:1;}
 }
+
+
+
+
+
+/*  IE FIXES
+ /////////////////////////////////////////////////////////  */
+
+
+.ie8 {
+	img {max-width:none; width:100%;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1023,10 +1060,7 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
 
 /* breakdance query*/
 @media only screen and (max-width: @screen-sm) {
-	body {
-		font-size:18px;
-		p {line-height:1.6em; padding:0 0 1.4em;}
-	}
+	
 	
 	header {
 		// header nav //	
@@ -1082,7 +1116,10 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
 
 /* Landscape phones and down */
 @media (max-width: @screen-xs) {
-
+	body {
+		font-size:18px;
+		p {line-height:1.6em; padding:0 0 1.4em;}
+	}
 	.container {
 		/* grid goes to 2 per row */
 		.display-grid.display-gridcols-4,

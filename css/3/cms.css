@@ -6267,15 +6267,11 @@ ul.menu ul {
 }
 .slideshow-direction-nav .slideshow-next {
   right: 15px;
+  opacity: 0.5;
 }
 .slideshow-direction-nav .slideshow-prev {
   left: 15px;
-}
-.flexslider:hover .slideshow-next {
-  opacity: 0.8;
-}
-.flexslider:hover .slideshow-prev {
-  opacity: 0.8;
+  opacity: 0.5;
 }
 .flexslider:hover .slideshow-next:hover,
 .flexslider:hover .slideshow-prev:hover {
@@ -6360,14 +6356,6 @@ ul.menu ul {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
   width: 96%;
 }
-.slideshow-direction-nav .slideshow-prev {
-  opacity: 1;
-  left: 0;
-}
-.slideshow-direction-nav .slideshow-next {
-  opacity: 1;
-  right: 0;
-}
 /* fancybox fixes for longer image captions */
 #fancybox-title-left,
 #fancybox-title-right {
@@ -6405,6 +6393,17 @@ ul.menu ul {
 }
 .product-list.display-list .field-price {
   padding-bottom: 6px;
+}
+.product-list.display-list .field-option {
+  display: block;
+  float: left;
+  margin: 20px 10px 10px 0;
+}
+.product-list.display-list .field-quantity {
+  margin: 20px 10px 10px 0;
+}
+.product-list .input-group {
+  width: 35%;
 }
 .product-list .field.customfield,
 .product-list .field-sku,
@@ -6502,6 +6501,11 @@ h3.subcategoryname {
 }
 .product-variant-table td.product-col-qty .input-append {
   margin-bottom: 0;
+}
+.product-form input.product-form-quantity {
+  float: left;
+  width: 20%;
+  margin-right: 5px;
 }
 /* BREADCRUMB   
 ///////////////////////////////////////////////////////////////////////////////// */
@@ -6634,7 +6638,8 @@ ul.twitter-list .tweet {
   padding-bottom: 1em;
   list-style: none;
 }
-/* USERS   ///////////////////////////////////////////////////////////////////////////////// */
+/* USERS   
+///////////////////////////////////////////////////////////////////////////////// */
 .userlist.display-grid .field-name {
   font-size: 1.3em;
   margin-bottom: 4px;
@@ -6662,7 +6667,8 @@ ul.twitter-list .tweet {
 .userlist .field-slug {
   display: none;
 }
-/* USER ACCOUNTS   ///////////////////////////////////////////////////////////////////////////////// */
+/* USER ACCOUNTS   
+///////////////////////////////////////////////////////////////////////////////// */
 .user-account-section table {
   border-width: 0px;
   width: 100%;
@@ -6729,6 +6735,12 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
   padding-top: 0;
   line-height: 1;
 }
+/*  IE FIXES
+ /////////////////////////////////////////////////////////  */
+.ie8 img {
+  max-width: none;
+  width: 100%;
+}
 /* BOOTSTRAP Media Queries
 ================================================== */
 /* Large devices (large desktops, 1200px and up) */
@@ -6774,13 +6786,6 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
 }
 /* breakdance query*/
 @media only screen and (max-width: 768px) {
-  body {
-    font-size: 18px;
-  }
-  body p {
-    line-height: 1.6em;
-    padding: 0 0 1.4em;
-  }
   header .navbar-collapse.in {
     overflow-y: visible;
   }
@@ -6816,6 +6821,13 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
 }
 /* end media query*//* Landscape phones and down */
 @media (max-width: 480px) {
+  body {
+    font-size: 18px;
+  }
+  body p {
+    line-height: 1.6em;
+    padding: 0 0 1.4em;
+  }
   .container {
     /* grid goes to 2 per row */
   
