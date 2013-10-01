@@ -58,8 +58,17 @@ CONTENTS:
 @bottomgutter:@sidegutter; /* value between display items on the bottom (default:30px) */
 @tableimagemaxwidth:100px; /*don't let table images get out of hand, width-wise (default:200px) */
 
+/* BOOTSTRAP
 
-/* 1. RESET STYLES
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////// */
+@import 'bootstrap.less';
+
+
+
+/* 1. RESET AND GLOBAL STYLES
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -85,7 +94,18 @@ CONTENTS:
 	{visibility:visible;}
 }
 
+/* adds bootstrap img-responsive code to imgs */
 
+img {
+	max-width:100%;
+	height:auto;
+}
+
+/* adds alpha omega capabilities for BS grid system */
+
+.alpha {padding-left:0;}
+.omega {padding-right:0;}
+.alpha.omega {padding left:0; padding-right:0;}
 
 
 /* 2. MUCSSLE
@@ -94,20 +114,16 @@ CONTENTS:
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////*/
-
 @import 'mucssle.less';
 
-/* BODYBUILDER GRID SYSTEM ///////////////////////////////////////////////////////////////////////////////// */
+/* 3. BODYBUILDER GRID SYSTEM 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
 @import 'bodybuilder.less';
-
-/* 3. CONVERGENCE'S CUSTOM VERSION OF BOOTSTRAP
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////////// */
-
-@import 'bootstrap.less';
 
 
 /* 4. CONVERGENCE feature-specific starter styles for blog elements, forms, inputs, etc.
@@ -129,7 +145,7 @@ CONTENTS:
 	img{max-width:100%;}
 }
 
-/* Stack */
+// Stack
 .display-stack {
 	.display-item {
 		margin:0 0 @bottomgutter 0; 
@@ -137,7 +153,7 @@ CONTENTS:
 		width:100%;
 	}
 }
-/* Grid */
+// Grid
 .display-grid {
 	.display-item {
 		margin:0 @sidegutter @bottomgutter 0; 
@@ -212,7 +228,7 @@ CONTENTS:
 .display-last-in-row{margin-right:0px!important;}
 
 
-/* List */
+// List
 .display-list {
 	.clearfix;
 
@@ -249,10 +265,32 @@ CONTENTS:
 	}
 }
 
-/* Table */
+// Table 
 .display-table,.product-buy-table{
 	img {max-width:@tableimagemaxwidth;}
 }
+
+// Dynamic Grid
+.dynamic-columns(@cols:3,@gap:30px) { // mixin for dynamic columns
+	-moz-column-count: @cols;
+	-moz-column-gap: @gap;
+	-webkit-column-count: @cols;
+	-webkit-column-gap: @gap;
+	column-count: @cols;
+	column-gap: @gap;
+}
+
+.display-dynamicgrid{
+	.dynamic-columns(3,30px);
+	width:100%;
+	
+	.display-item{
+		display:inline-block;
+		margin-bottom:30px;
+		width:100%;
+	}
+}
+
 
 
 /* Blog Styles    ///////////////////////////////////////////////////////////////////////////////// */
@@ -356,16 +394,27 @@ a.back-link {
 .addthis_toolbox.addthis_default_style.addthis_16x16_style{
 	font-size:16px!important;
 }
-.addthis_default_style{
-.at300b,
-.at300m {display:inline-block;float:left; padding:2px;}
-.at300b img{vertical-align:top; margin-top:0px;}
+.addthis_toolbox.addthis_default_style {
+	.at300b,.at300m {
+		display:inline-block;
+		float:left; 
+		padding:2px;
+	}
+	.at300b img {
+		vertical-align:top; 
+		margin-top:0px;
+	}
+	.at300bs.at15t_compact {
+		margin:0!important;
+	}
 .at300m {width:16px; height:16px;}
 }
+
 .addthis_toolbox.addthis_default_style .at300bs.at15t_compact {
     background: url("http://www.convergencecms.co/resources/images/c-icon-share.png") no-repeat 0 0;
 	margin:0!important;
 }
+
 
 /* comments */
 
@@ -406,25 +455,28 @@ form.form-comments {
     border: 1px solid #ebebeb;
 	border-radius:4px;
     margin: @bottomgutter 0;
-	padding:2.25em 0;
+	padding:2.25em;
     width: auto;
 	
-	h4 {
+	.form-comments-title {
 		text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.8);
 		padding:0 0 1em;
 	}
+	.form-comments-col1,
+	.form-comments-col2{
+		float:left;
+	}
+	.form-comments-col1{
+		width:32%;
+		margin-right:3%;
+	}
+	.form-comments-col2{
+		width:65%;
+	}
 	.control-group {
 		float: none;
-		&#control-group-captcha_code{
-			max-width:180px;
-		}
 	}
 
-	img#captcha{
-		width:100%;
-		display:block;
-		margin-bottom:10px;
-	}
 	input[type="text"],
 	input[type="email"]{padding:9px;height:40px;}
 	textarea{
@@ -449,8 +501,10 @@ ul.filter-list{list-style:none; margin:0; padding:0;}
 }
 
 /* Forms   ///////////////////////////////////////////////////////////////////////////////// */
+
 label.error,
 .form-item-required-symbol{color:@danger!important;}
+
 
 /* MENUS   ///////////////////////////////////////////////////////////////////////////////// */
 
@@ -466,22 +520,26 @@ ul.menu ul
 .slideshow-viewport {max-height: 2000px; -webkit-transition: all 1s ease; -moz-transition: all 1s ease; transition: all 1s ease;}
 .loading .slideshow-viewport {max-height: 300px;}
 .flexslider .slides {zoom: 1;}
-
 .carousel li {margin-right: 5px}
 
 
 /* Direction Nav */
 .slideshow-direction-nav {*height: 0;}
 .slideshow-direction-nav a {width: 30px; height: 30px; margin: -20px 0 0; display: block; background: url(http://www.convergencecms.info/resources/images/bg_direction_nav.png) no-repeat 0 0; position: absolute; top: 50%; z-index: 10; cursor: pointer; text-indent: -9999px; opacity: 0; -webkit-transition: all .3s ease;}
-.slideshow-direction-nav .slideshow-next {background-position: 100% 0; right: -36px; }
-.slideshow-direction-nav .slideshow-prev {left: -36px;}
-.flexslider:hover .slideshow-next {opacity: 0.8; right: 15px;}
-.flexslider:hover .slideshow-prev {opacity: 0.8; left: 15px;}
+.slideshow-direction-nav .slideshow-next {background-position: 100% 0;}
+.slideshow-direction-nav {
+	.slideshow-next {right: 15px;}
+	.slideshow-prev {left: 15px;}
+}
+.flexslider:hover .slideshow-next {opacity: 0.8;}
+.flexslider:hover .slideshow-prev {opacity: 0.8;}
+
 .flexslider:hover .slideshow-next:hover, .flexslider:hover .slideshow-prev:hover {opacity: 1;}
 .slideshow-direction-nav .slideshow-disabled {opacity: .3!important; filter:alpha(opacity=30); cursor: default;}
 
 /* Control Nav */
 .slideshow-control-nav {width: 100%; position: absolute; bottom: -40px; text-align: center;}
+.ie7 .slideshow-control-nav {bottom:20px;}
 .slideshow-control-nav li {margin: 0 6px; display: inline-block; zoom: 1; *display: inline;}
 .slideshow-control-paging li a {width: 11px; height: 11px; display: block; background: #666; background: rgba(0,0,0,0.5); cursor: pointer; text-indent: -9999px; -webkit-border-radius: 20px; -moz-border-radius: 20px; -o-border-radius: 20px; border-radius: 20px; box-shadow: inset 0 0 3px rgba(0,0,0,0.3);}
 .slideshow-control-paging li a:hover { background: #333; background: rgba(0,0,0,0.7); }
@@ -508,6 +566,31 @@ ul.menu ul
 
 .slideshow-direction-nav .slideshow-prev {opacity: 1; left: 0;}
 .slideshow-direction-nav .slideshow-next {opacity: 1; right: 0;}
+
+
+
+/* fancybox fixes for longer image captions */
+
+#fancybox-title-left, #fancybox-title-right {display:none;}
+#fancybox-title-main {background:none; line-height:20px;font-size: 15px;}
+#fancybox-overlay {opacity:.9!important;}
+#fancybox-title-wrap span {height: 5px;}
+
+
+
+/* Fancybox Lightbox fixes for bootstrap - accounts for border-box sizing */
+
+#fancybox-wrap, #fancybox-outer {
+	-webkit-box-sizing:content-box;
+	-moz-box-sizing:content-box;
+	box-sizing:content-box;
+	box-sizing:content-box;
+}
+
+
+
+
+
 
 
 
@@ -682,14 +765,25 @@ ul.menu-type-sitemap li ul {
 
 ul,ol{margin:0 10% 1em;}
 hr{border-color:@lightborder; border-width:1px 0 0;}
-.imageright img, img.imageright {
-    float: right;
-    margin: 0 0 1em 1.7em;
-}
+
+/* used to float images in text - can be selected from within the text editor under "styles" */		
 .imageleft img, img.imageleft {
     float: left;
-    margin: 0 1.7em 1em 0;
+    height: auto;
+    margin: 0 25px 20px 0;
+    padding-right: 25px;
+    width: 300px;
+	border-right: 1px solid #999;
 }
+.imageright img, img.imageright {
+    float: right;
+    height: auto;
+    margin: 0 0 25px 20px;
+    padding-left: 25px;
+    width: 300px;
+	border-left: 1px solid #CCC;
+}
+
 span#bithtml_parent {
     width: auto !important;
 }
@@ -793,17 +887,6 @@ table#bithtml_tbl {
 
 /* account table styles */
 
-table.account-transaction-list {
-    width: 100%;
-}
-.account-info address span {
-    display: block;
-}
-.account-container table td, .account-container table th {
-    border: 1px solid #7C7C7C;
-    font-size: 13px;
-    padding: 10px;
-}
 
 /* subscription upload color values */
 
@@ -839,89 +922,180 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
 
 
 
-
-
-
-@mq2: @breakdance - 1;
-/* #Media Queries
+/* BOOTSTRAP Media Queries
 ================================================== */
 
-	/* Smaller than standard 960 (devices and browsers) */
-	@media only screen and (max-width: 959px) {
+// Media queries breakpoints
+// --------------------------------------------------
+
+// Extra small screen / phone
+@screen-xs:                  480px;
+@screen-phone:               @screen-xs;
+
+// Small screen / tablet
+@screen-sm:                  768px;
+@screen-tablet:              @screen-sm;
+
+// Medium screen / desktop
+@screen-md:                  992px;
+@screen-desktop:             @screen-md;
+
+// Large screen / wide desktop
+@screen-lg:                  1200px;
+@screen-lg-desktop:          @screen-lg;
+
+
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg) {
+	body {
+		font-size:18px;
+		p {line-height:1.6em; padding:0 0 1.4em;} 
+	}
+	header nav {
+		ul.nav.menu-type-main > li > a,
+		ul.nav.cartinfo > li > a {
+			font-size:.9em;
+		}
+		ul.menu-type-main > li ul.menu-level-1 {font-size:.9em;}
+	}
+} /* end media query*/
+
+
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md) {  }
+
+
+
+/* Larger Navs need resizing in desktops - enter your max width where it runs into the logo */
+@media (max-width: 992px) and (min-width: @screen-sm){
+	header nav {
+		ul.nav.menu-type-main > li > a,
+		ul.nav.cartinfo > li > a {
+			font-size:.8em;
+			padding: 5px 11px;
+		}
+		ul.menu-type-main > li ul.menu-level-1 {font-size:.9em;}
+	}
+} /* end media query*/
+
+
+
+/* breakdance query*/
+@media only screen and (max-width: @screen-sm) {
+	body {
+		font-size:18px;
+		p {line-height:1.6em; padding:0 0 1.4em;}
+	}
+	
+	header {
+		// header nav //	
+		.navbar-collapse.in {
+			overflow-y:visible;
+			// this rule makes mobile navs 100% wide - not sure why boostrap gave this auto padding
+		}
 	}
 
-	/* All Mobile Sizes (devices and browser) */
-	@media only screen and (max-width: @mq2) {
-		.container.responsive{
-			.product-list{
-				&.display-list{
-					.field-name{
-						font-size:1.3em;
-					}
+	
+	.container {
+		.product-list{
+			&.display-list{
+				.field-name{
+					font-size:1.3em;
 				}
-				.field-description{
-					display:none;
-				}
-			}	
-			
-			form.form-comments{
-				padding:1.5em;
 			}
-			
-			.search-result-url{
+			.field-description{
 				display:none;
 			}
+		}	
+		
+		form.form-comments{
+			padding:1.5em;
+			.form-comments-col1,
+			.form-comments-col2{
+				float:none;
+				width:100%;
+				margin:0;
+			}
+		}
+		
+		.search-result-url{
+			display:none;
 		}
 	}
-
-	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
-	@media only screen and (min-width: 480px) and (max-width: @mq2) {
-	}
-
-	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
-	@media only screen and (max-width: 499px) {
-		.container.responsive{
-			/* grid goes to 2 per row */
-			.display-grid.display-gridcols-4,
-			.display-grid.display-gridcols-3,
-			.display-grid{
-				.display-item{
-					width:(100 - (1 * @sidegutter)) / 2;
-					clear:none!important;
-					margin-right:@sidegutter!important;
-					
-					&:nth-child(2n){
-						margin-right:0!important;
-					}
-					&:nth-child(2n+1){
-						clear:both!important;
-					}
-				}
-			}
-			
-			/* form comments inputs go 1 per row*/
-			form.form-comments{
-				padding:1em;
-			}
-			
-			.account-transaction-shipping,
-			.account-transaction-billing{display:none;}
+	
+	.display-dynamicgrid{
+		.dynamic-columns(2,10px);
+		
+		.display-item{
+			margin-bottom:10px;
 		}
 	}
-	@media only screen and (max-width: 349px) {
-		.container.responsive{
-			/* grid goes to 1 per row */		
-			.display-grid.display-gridcols-4,
-			.display-grid.display-gridcols-3,
-			.display-grid.display-gridcols-2,
-			.display-grid{
-				.display-item{
-					width:100%;
+		
+
+} /* end media query*/ 
+
+
+
+
+
+
+/* Landscape phones and down */
+@media (max-width: @screen-xs) {
+
+	.container {
+		/* grid goes to 2 per row */
+		.display-grid.display-gridcols-4,
+		.display-grid.display-gridcols-3,
+		.display-grid{
+			.display-item{
+				width:(100 - (1 * @sidegutter)) / 2;
+				clear:none!important;
+				margin-right:@sidegutter!important;
+				
+				&:nth-child(2n){
 					margin-right:0!important;
+				}
+				&:nth-child(2n+1){
 					clear:both!important;
 				}
 			}
 		}
+		
+		/* form comments inputs go 1 per row*/
+		form.form-comments{
+			padding:1em;
+		}
+		.account-transaction-shipping,
+		.account-transaction-billing{display:none;}
+	}
+	
+	.imageleft img, img.imageleft,
+	.imageright img, img.imageright {
+		float: none;
+		height: auto;
+		margin: 0 0 25px;
+		padding: 0px;
+		width: 100%;
+		border: none;
 	}
 
+} /* end media query*/ 
 
+
+@media only screen and (max-width: 349px) {
+	.container {
+		/* grid goes to 1 per row */		
+		.display-grid.display-gridcols-4,
+		.display-grid.display-gridcols-3,
+		.display-grid.display-gridcols-2,
+		.display-grid{
+			.display-item{
+				width:100%;
+				margin-right:0!important;
+				clear:both!important;
+			}
+		}
+	}
+} /* end media query*/ 
