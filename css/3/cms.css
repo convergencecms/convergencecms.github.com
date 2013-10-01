@@ -5882,8 +5882,8 @@ img {
 /* GLOBAL TYPOGRAPHY 
 ///////////////////////////////////////////////////////////////////////////////// */
 body {
-  font-size: 16px;
-  /* We feel 16px is a better base font size, and all of our typography rules will be based on this size */
+  font-size: 18px;
+  /* We feel 18px is a better base font size, and all of our typography rules will be based on this size */
 }
 h1,
 h2,
@@ -5934,6 +5934,10 @@ h6 {
   text-transform: uppercase;
   letter-spacing: .08em;
   padding: .28em 0;
+}
+p {
+  line-height: 1.6em;
+  padding: 0 0 1.4em;
 }
 /* GENERIC DISPLAY ITEMS (PRODUCTS, CATEGORIES, ITEMS, USERS) 
 ///////////////////////////////////////////////////////////////////////////////// */
@@ -6528,6 +6532,10 @@ h3.subcategoryname {
 .product-images img.image-order-1 {
   display: block;
 }
+.product-images .flex-control-thumbs {
+  margin: 0;
+  padding: 0;
+}
 .product-images .flex-control-thumbs li {
   list-style: none;
   display: inline-block;
@@ -6635,7 +6643,7 @@ hr {
 img.imageleft {
   float: left;
   height: auto;
-  margin: 0 25px 20px 0;
+  margin: 5px 25px 20px 0;
   padding-right: 25px;
   width: 300px;
   border-right: 1px solid #999;
@@ -6644,7 +6652,7 @@ img.imageleft {
 img.imageright {
   float: right;
   height: auto;
-  margin: 0 0 25px 20px;
+  margin: 5px 0 25px 20px;
   padding-left: 25px;
   width: 300px;
   border-left: 1px solid #CCC;
@@ -6802,18 +6810,7 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
   body {
-    font-size: 18px;
-  }
-  body p {
-    line-height: 1.6em;
-    padding: 0 0 1.4em;
-  }
-  header nav ul.nav.menu-type-main > li > a,
-  header nav ul.nav.cartinfo > li > a {
-    font-size: .8em;
-  }
-  header nav ul.menu-type-main > li ul.menu-level-1 {
-    font-size: .9em;
+    font-size: 20px;
   }
 }
 /* end media query*/
@@ -6823,13 +6820,7 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
 }
 /* Larger Navs need resizing in desktops - enter your max width where it runs into the logo */
 @media (max-width: 992px) and (min-width: 768px) {
-  header nav ul.nav.menu-type-main > li > a,
-  header nav ul.nav.cartinfo > li > a {
-    font-size: 1em;
-  }
-  header nav ul.menu-type-main > li ul.menu-level-1 {
-    font-size: .9em;
-  }
+  
 }
 /* end media query*/
 @media (min-width: 769px) and (max-width: 1199px) {
@@ -6876,13 +6867,6 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
 }
 /* end media query*//* Landscape phones and down */
 @media (max-width: 480px) {
-  body {
-    font-size: 18px;
-  }
-  body p {
-    line-height: 1.6em;
-    padding: 0 0 1.4em;
-  }
   .container {
     /* grid goes to 2 per row */
   
