@@ -55,6 +55,7 @@ This stylesheet is run on LESS. Not familiar with LESS? Learn more about the Dyn
 
 
 
+
 //  Display Items (Blog Articles, Events, Products, Categories, Item List Items, Users)
 // ================================================== 
 
@@ -124,12 +125,14 @@ img {
 }
 
 .clearfix:after {
-  clear: both;
+  clear: both;  
 }   
 
 .alpha {padding-left:0;}
 .omega {padding-right:0;}
 .alpha.omega {padding-left:0;padding-right:0;}
+
+
 
 
 
@@ -139,6 +142,67 @@ img {
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////// 
+
+
+
+/* GLOBAL TYPOGRAPHY 
+///////////////////////////////////////////////////////////////////////////////// */
+
+
+
+body {font-size:16px; /* We feel 16px is a better base font size, and all of our typography rules will be based on this size */ }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: inherit;
+  font-weight: bold;
+  color: inherit;
+  text-rendering: optimizelegibility;
+  line-height: 1.125em;
+  small{
+	  font-weight: normal;
+	  color: @notsoimportant;
+	  line-height:1;
+	  font-size:@smallheading;
+  }
+}
+
+h1 {
+  font-size: @h1base;
+  padding:0 0 .42em;
+}
+
+h2 {
+  font-size: @h2base;
+  padding:.5em 0;
+}
+
+h3 {
+  font-size: @h3base;
+  padding:.5em 0;
+}
+
+h4 {
+  font-size: @h4base;
+  padding:.5em 0;
+}
+
+h5 {
+  font-size: @h5base;
+  padding:.25em 0;
+}
+
+h6 {
+  font-size: @h6base;
+  text-transform: uppercase;
+  letter-spacing:.08em;
+  padding:.28em 0;
+}
+
 
 
 

@@ -5879,6 +5879,62 @@ img {
   padding-left: 0;
   padding-right: 0;
 }
+/* GLOBAL TYPOGRAPHY 
+///////////////////////////////////////////////////////////////////////////////// */
+body {
+  font-size: 16px;
+  /* We feel 16px is a better base font size, and all of our typography rules will be based on this size */
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: inherit;
+  font-weight: bold;
+  color: inherit;
+  text-rendering: optimizelegibility;
+  line-height: 1.125em;
+}
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small {
+  font-weight: normal;
+  color: #999999;
+  line-height: 1;
+  font-size: 0.5em;
+}
+h1 {
+  font-size: 2.75em;
+  padding: 0 0 .42em;
+}
+h2 {
+  font-size: 2.25em;
+  padding: .5em 0;
+}
+h3 {
+  font-size: 1.75em;
+  padding: .5em 0;
+}
+h4 {
+  font-size: 1.25em;
+  padding: .5em 0;
+}
+h5 {
+  font-size: 1em;
+  padding: .25em 0;
+}
+h6 {
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  padding: .28em 0;
+}
 /* GENERIC DISPLAY ITEMS (PRODUCTS, CATEGORIES, ITEMS, USERS) 
 ///////////////////////////////////////////////////////////////////////////////// */
 .display-image {
