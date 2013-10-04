@@ -1,0 +1,29 @@
+<div class="roasters-product clearfix">
+	<div class="four columns">
+		<@product field="image"/@>
+	</div>
+	<div class="twelve columns">
+		<h2><@product field="name"/@></h2>
+		<h3>$<@product field="price"/@></h3>
+		<div class='display-<@product field="customfield" customfield="roasters" itemlistfield="name" emptytest="true"/@>'>
+			<h6>Roasted by</h6>
+
+			<div class="media">
+				<a class="pull-left" href='<@product field="customfield" customfield="roasters" itemlistfield="permalink"/@>'>
+					<@product field="customfield" customfield="roasters" itemlistfield="image" width="64" height="64"/@>
+				</a>
+				<div class="media-body">
+					<h4 class="media-heading">
+						<@product field="customfield" customfield="roasters" itemlistfield="name"/@>
+					</h4>
+
+					<@product field="customfield" customfield="roasters" itemlistfield="bio"/@>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+
+<hr>

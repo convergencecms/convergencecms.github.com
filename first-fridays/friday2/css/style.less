@@ -1,0 +1,933 @@
+// LESS 
+
+
+/* GLOBAL SETUP  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+
+
+// COLORS  
+////////////////////////////////////////////////////////// //
+
+// Your color variables that are used throughout the site. For named colors such as "purple", simply find/replace to change to "orange", etc.
+
+@dk-gray: #333;
+@md-gray: #666;
+@lt-gray: #CCC;
+@lte-gray: #EEE;
+@purple:#A31397;
+@lt-purple:lighten(@purple,15%);
+@dk-purple:darken(@purple,15%);
+@lightest: #FFF;
+@darkest:#000;
+
+
+/* BUTTONS 
+ ////////////////////////////////////////////////////////// */
+
+
+// Buttons - Isolating the Bootstrap Button Colors/Mixins to re-color Buttons
+
+@btnTextColor: 						@lightest; //main button text color
+@btnBackground:                     @purple;   //main button bg color
+@btnBorder:                         @purple;
+@btnInverseBackground:              @dk-gray;
+
+.highlight(@highlight:@btnBackground) {background:lighten(@highlight,15%);}
+
+
+// Buttons 
+.btn {
+  background:@md-gray;
+  color:@btnTextColor;
+  border: 1px solid @md-gray;
+  *border: 0; // Remove the border to prevent IE7's black border on input:focus
+  box-shadow:none;
+  text-shadow:none;
+  &:hover,
+  &:focus {
+    color: @btnTextColor;
+	border: 1px solid @btnBackground;
+	.highlight(@btnBackground);
+  }
+}
+.btn-primary.disabled, .btn-primary[disabled] {
+	color: @lightest;
+	background-color: @md-gray;
+	border: 1px solid @md-gray;
+}
+
+
+
+
+// Alternate buttons - these are pure Twitter Bootstrap, and are not natively supported in Convergence, so they are not necessary to change unless you are adding programming that will use them.
+
+@btnPrimaryBackground:              @purple;
+@btnInfoBackground:                 #2782F5;
+@btnSuccessBackground:              #5EBF00;
+@btnWarningBackground:              #ffae55;
+@btnDangerBackground:               #D90101;
+
+.btn-primary {
+	background:@btnPrimaryBackground;
+	border: 1px solid @btnPrimaryBackground;
+	&:hover,&:focus {.highlight(@btnPrimaryBackground);}
+}
+.btn-warning {
+	background:@btnWarningBackground;
+	border: 1px solid @btnWarningBackground;
+	&:hover,&:focus {.highlight(@btnWarningBackground);}
+}
+.btn-danger {
+	background:@btnDangerBackground;
+	border: 1px solid @btnDangerBackground;
+	&:hover,&:focus {.highlight(@btnDangerBackground);}
+}
+.btn-success {
+	background:@btnSuccessBackground;
+	border: 1px solid @btnSuccessBackground;
+	&:hover,&:focus {.highlight(@btnSuccessBackground);}
+}
+.btn-info {
+	background:@btnInfoBackground;
+	border: 1px solid @btnInfoBackground;
+	&:hover,&:focus {.highlight(@btnInfoBackground);}
+}
+.btn-inverse {
+	background:@btnInverseBackground;
+	border: 1px solid @btnInverseBackground;
+	&:hover,&:focus {.highlight(@btnInverseBackground);}
+}
+
+
+// Nav button on mobile
+.navbar .btn-navbar .icon-bar {
+  background-color: @md-gray;
+  .corners (1px);
+  .box-shadow (0 1px 0 rgba(0, 0, 0, 0.25));
+    
+}
+
+
+
+
+/* TRANSITIONS  
+////////////////////////////////////////////////////////// */
+
+.color-in {
+	-webkit-transition: color .05s linear;
+ 	-moz-transition: color .05s linear;
+	transition: color .05s linear;
+}
+.color-out {
+	-webkit-transition:color .25s linear;
+ 	-moz-transition: color .25s linear;
+	transition: color .25s linear;
+}
+.bg-in {
+	-webkit-transition: background-color .05s linear;
+ 	-moz-transition: background-color .05s linear;
+	transition: background-color .05s linear;
+}
+.bg-out {
+	-webkit-transition: background-color .25s linear;
+ 	-moz-transition: background-color .25s linear;
+	transition: background-color .25s linear;
+}
+.fade-in {
+	-webkit-transition: all .05s linear;
+ 	-moz-transition: all .05s linear;
+	transition: all .05s linear;
+}
+.fade-out {
+	-webkit-transition: all .25s linear;
+ 	-moz-transition: all .25s linear;
+	transition: all .25s linear;
+}
+
+
+/* SHORTCUTS 
+ ////////////////////////////////////////////////////////// */
+
+
+// transparent backgrounds
+
+// use like this: ".white(50%,.5);" for a 50% white background. Use %'s for IE8 and below. That really just gives you a solid medium gray.
+
+.white(@percentage:50%,@decimal:.5) {background:darken(#fff,@percentage); /*IE*/ background:rgba(255,255,255,@decimal);}
+.black(@percentage:50%,@decimal:.5) {background:lighten(#000,@percentage); /*IE*/ background:rgba(0,0,0,@decimal);}
+
+
+// gradient  
+
+.gradient {
+   background-color: @md-gray;
+   background-image: -webkit-linear-gradient(top, @md-gray,@md-gray) ;
+   background-image:    -moz-linear-gradient(top, @md-gray,@md-gray) ;
+   background-image:     -ms-linear-gradient(top, @md-gray,@md-gray) ;
+   background-image:      -o-linear-gradient(top, @md-gray,@md-gray) ;
+   background-repeat:no-repeat;
+   background-attachment:fixed;
+}
+
+// border-radius  
+
+// use like this: ".corners(3px);" or whatever value you want. Can be "0" as well. 
+
+.corners (@radius: 8px) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius:    @radius;
+	border-radius:         @radius;
+
+	-moz-background-clip:    padding;
+	-webkit-background-clip: padding-box;
+	background-clip:         padding-box;
+}
+
+// text shadow and box shadow  
+
+// use like this: ".text-shadow(0 1px 3px rgba(0, 0, 0, 0.25));" 
+
+.text-shadow (@string: 0 1px 3px rgba(0, 0, 0, 0.25)) {
+	text-shadow: @string;
+}
+
+.box-shadow (@string) {
+	-webkit-box-shadow: @string;
+	-moz-box-shadow:    @string;
+	box-shadow:         @string; 
+}
+
+
+
+
+/* TEXT STYLES 
+////////////////////////////////////////////////////////// */  
+
+
+.museo { font-family: "museo-sans", Arial, Helvetica, sans-serif; font-weight:300;}
+.freight { font-family: "freight-sans-pro", Arial, Helvetica, sans-serif; font-weight:300; }
+.enzo { font-family: "ff-enzo-web", Arial, Helvetica, sans-serif; font-weight:300; }
+.aw { font-family: "aw-conqueror-inline", Arial, Helvetica, sans-serif; font-weight:400; }
+.meta { font-family: "ff-meta-sc-web-pro", Arial, Helvetica, sans-serif; font-weight:400; }
+.ernest { font-family: "ff-ernestine-web-pro", Georgia, Times, serif; font-weight:300; }
+
+
+.bodyfont {.freight;}
+.headerfont {.freight;}
+
+.light {font-weight:300;}
+.normal {font-weight:300;}
+.bold {font-weight:700;}
+.heavy {font-weight:700;}
+.ultra {font-weight:700;} 
+
+
+
+// custom global text styles
+
+body, input, button, select, textarea {.bodyfont;}
+/*h1, h2, h3, h4, h5, h6 {.headerfont;}*/
+
+h1 {
+	.light;
+	font-size: 3em;
+	padding: 0 0 .5em;
+} 	
+h2,
+h3	{.bold;} 
+h2 {
+	font-size: 2em;
+	padding: 0 0 1em;
+}
+h2, h3, h4 {.upper;}
+
+
+// link styles and shorthand
+
+a {color:@purple; .nodeco; .color-out;}
+a:hover {color:@dk-purple; text-decoration:underline; .color-in;}
+
+.upper {text-transform:uppercase;}
+.nodeco {text-decoration:none;}
+
+
+
+
+
+
+/* SITE STRUCTURE & CUSTOMIZATIONS  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+
+
+
+
+/* BODY/GLOBAL 
+//////////////////////////////////////////////////////////////////  */
+
+
+body {background:@lightest;}
+
+
+/* HEADER 
+//////////////////////////////////////////////////////////////////  */
+
+
+header {
+	text-align: left;
+	padding:25px 0;	
+	
+	
+	// site name text //
+	h1 {
+		text-align:left;
+		float:left;
+		display:block;
+		margin:6px 0 0;
+		padding:0 0 0 10px;
+		font-size:50px;
+		.headerfont;
+		.upper;
+		.light;
+		
+		a, a:hover {.nodeco; color:@dk-gray;}
+		a:hover {color:@purple;}
+	}
+	
+	
+	// header nav //
+	nav {
+		float:right; 
+		padding-top:12px;
+		ul.nav.menu-type-main > li > a,
+		ul.nav.cartinfo > li > a {
+			.bg-out; 
+			.white(0); /*main nav bg color*/
+			color:@dk-gray; /* main nav text color*/
+			text-shadow:none;
+		
+			&:hover, 
+			&.active,
+			&.active:hover,
+			&:active,
+			&:focus {
+				.bg-in; 
+				background:@purple; /*main nav bg hover*/ 
+				color:@lightest; /*main nav text hover*/
+				box-shadow:none;
+			}
+		}
+		ul.menu-type-main li.menu-page-legal {display:none;}
+		
+		
+		// DROPDOWNS //
+		
+		ul.menu-type-main > li.has-children ul,
+		ul.menu-type-main > li.has-children ul.menu-level-1 li {display:none;}
+		ul.menu-type-main > li.has-children.show ul,
+		ul.menu-type-main > li.has-children.show ul.menu-level-1 li {display:block;}
+		
+		
+		// browser nav styles //
+		&.hover-nav ul.menu-type-main > li {
+			&.has-children > {
+				position:relative;
+				
+				a {margin-bottom:5px;}
+				&.show > a {
+					background:purple; /*main nav background hover - typically the same as above */
+					color:@lightest; /*main nav link hover - typically the same as above */
+				}
+				 
+				ul.menu-level-1 {
+					display:none;
+					position:absolute;
+					top: 40px;
+					left:0px;
+					width: 130px;
+					z-index: 101;
+					padding:10px 10px 5px;
+					background:@lte-gray;  /*subnav background*/
+					.corners(4px);
+										
+					li {
+						line-height:1em; margin:0 0 5px; display:block; width:100%;
+						a {
+							color:@dk-purple;  /*subnav text */
+							&:hover {color:@purple;/*subnav text hover*/} 
+						}
+					}
+					// arrow //
+					li.up-arrow {
+						position:absolute;
+						top: -10px;
+						left:20px;
+						width: 0; 
+						height: 0; 
+						border-left: 10px solid transparent;
+						border-right: 10px solid transparent;
+						border-bottom: 10px solid @lte-gray;  /*subnav arrow color*/
+					}
+					ul.menu-level-2 {display:none;}
+				}
+			}
+		}
+				
+		// mobile nav button //
+		.btn-navbar{margin-top:0px;}
+	}
+}
+ul.fc_minicart {display:none;} /* hides the minicart when nothing is added */
+/* eliminates extra nav functions in checkout */
+.page-checkout,
+.page-receipt {
+	header nav ul.menu-level-0 > li.has-children ul.menu-level-1 {
+		display:none;
+	}
+	ul.fc_minicart {display:none;}
+}
+
+
+
+
+/*  HOME 
+/////////////////////////////////////////////////////////  */
+
+
+.box {
+	min-height:220px;
+	height: auto;
+	.corners (12px);
+	padding:15px;
+	background: @lightest;
+}
+.box p {
+	font-size:14px;
+	text-align:left;
+}
+ul.twitter-list{
+	li{list-style:none; padding-bottom:15px;}
+}
+h2.slideshow-title {padding:0 0 .5em;}
+
+
+
+
+
+/* INSIDE CONTENT 
+/////////////////////////////////////////////////////////  */
+
+
+/* the .side and .main floats  allow the sidebar to go under the main area in mobile. 
+to disable this, and have the sidebar collapse to the top, switch the order of .main and .side in the inside HTML templates (inside, user, account, product, item, articel, event. Then, comment out these styles.)
+*/
+.side {float:left;}
+.main {float:right;}
+/* ----- */
+
+.content {
+	padding:40px 0 40px 40px;
+	min-height:300px;
+	height: auto !important;
+	height: 300px;
+	background:@lightest;
+	.corners(8px);
+}
+
+/* used to float images in text - can be selected from within the text editor under "styles" */		
+.imageleft img, img.imageleft {
+    float: left;
+    height: auto;
+    margin: 0 25px 20px 0;
+    padding-right: 25px;
+    width: 300px;
+	border-right: 1px solid @lt-gray;
+}
+.imageright img, img.imageright {
+    float: right;
+    height: auto;
+    margin: 0 0 25px 20px;
+    padding-left: 25px;
+    width: 300px;
+	border-left: 1px solid @lt-gray;
+}
+
+
+ 
+/* SIDE BAR 
+/////////////////////////////////////////////////////////  */
+
+
+.side {
+	min-height:150px;
+	height:auto;
+}
+
+/* Subnav */
+ 
+.side-content {
+	padding:40px 18px 0 0px;
+	h6 { 
+		margin: 20px 0;
+		border-bottom:1px solid @lt-gray;/*side h6 border */
+	}
+	a {color:@purple;/*side links */}
+	a:hover {color:@dk-purple;/*side hover */}
+	nav {
+		padding:0 0 10px;
+	}
+	nav > ul {
+		margin-bottom: 30px;
+		padding: 0;
+		
+		li {margin:0 0 13px;}
+		a {
+			font-size:1.5em;
+			line-height:.8em;
+			color:@dk-gray; /*side nav links */
+			&:hover {color:@purple;/*side nav hover */} 
+			&.active {.bold;/*side nav active */} 
+		}
+		
+		// this is a second-level nav for the sidebar //
+		ul.child-menu {
+			margin:3px 0 10px;
+			li {margin:0 0 0px;}
+			
+			a {
+				font-size:1em;
+				line-height:.6em;
+				color:@purple; /*side nav links */
+				&:hover {color:@purple;/*side nav hover */} 
+				&.active {.bold; color:@purple;/*side nav active */} 
+			}
+		}
+		&.menu-category > li > ul,
+		&.menu-product > li > ul {
+			margin:13px 0 10px;
+		}
+		li.has-children {
+			ul.child-menu {display:none;}
+			&.is-open ul.child-menu {display:block;}
+		}
+	}		
+}		
+
+
+/*  PHOTOS
+/////////////////////////////////////////////////////////  */
+
+
+.flexslider {
+	background:none;
+	border: 0; 
+	.box-shadow (none);
+	margin:0 0 60px;
+	img {.corners (8px);}
+}
+
+.slideshow-direction-nav {
+	.slideshow-next {right: 15px;}
+	.slideshow-prev {left: 15px;}
+}
+.slideshow.displaystyle-lightbox {
+	img {.corners (8px);}
+}
+.slideshow.displaystyle-lightbox .slideshow-image, 
+.slideshow.displaystyle-gallery .slideshow-image {
+	margin: 1.16%;
+	width: 31%;
+	img {width:100%;}
+}
+#fancybox-title-left, #fancybox-title-right {display:none;}
+#fancybox-title-main {.bodyfont; background:none; line-height:20px;font-size: 15px;}
+#fancybox-overlay {opacity:.9!important;}
+#fancybox-title-wrap span {height: 5px;}
+
+
+/*  FEED, BLOGS, EVENTS 
+/////////////////////////////////////////////////////////  */
+
+
+h1.field-name.post-title {
+	font-size:2em;
+}
+.display-stack .display-item,
+.display-list .display-item {
+	border-bottom: 1px solid @lt-gray;/*bottom border color*/
+	margin-bottom: 2em;
+	padding-bottom: 2em;
+}
+
+.box, .side {
+	.posts-list {
+		h1.post-title {
+			font-size:1em;
+			line-height:1.2em;
+		}
+		.display-item {
+			border-bottom:none;
+			margin-bottom: 1em;
+			padding-bottom: 0;
+		}
+		.field-post-info {
+			color:@md-gray;/*title, dates, etc color*/
+			margin:0;
+		}
+	}
+}
+
+.display-stack .display-image {
+	display:inline-block;
+	float:left;
+	width:27%;
+	height:auto;
+	margin:0 3% 0 0;
+}
+.display-stack {
+	.field-summary {
+		display:inline-block;
+		float:left;
+		width:70%;
+		margin:0;
+		height:auto;
+	}
+	.display-item-no-image .field-summary {
+		display:block;
+		float:none;
+		width:100%;
+	}
+}
+.addthis_toolbox.addthis_default_style {
+	.at300b,.at300m {
+		display:inline-block;
+		float:left; 
+		padding:2px;
+	}
+	.at300b img {
+		vertical-align:top; 
+		margin-top:0px;
+	}
+	.at300bs.at15t_compact {
+		margin:0!important;
+	}
+}
+
+
+
+
+/*  FORMS
+/////////////////////////////////////////////////////////  */
+
+
+
+h2.form-title {padding:0 0 .5em;}
+.form-section-title {margin-top:30px;}
+
+.control-group {
+	input, textarea, .uneditable-input {
+		padding: 4px 1%;
+		width: 98%;
+	}
+	label.checkbox input {
+		padding:0;
+		width: auto;
+	}
+	.form-actions {
+		background:none;
+		border:none;
+		margin:0;
+	}
+	
+	// comment out to the next hash mark for a floated label input arrangement in account login forms
+	label,
+	.control-label {
+		float:none;
+		text-align:left;
+		width:100%;
+	}
+	.controls {margin:0;}
+	.form-actions {
+		padding:0;
+	}
+	//
+	
+}
+
+
+
+
+
+/*  PRODUCTS
+/////////////////////////////////////////////////////////  */
+
+
+.product-list {
+	&.display-grid  {
+		.product .field {
+			text-align:center;
+		}
+	}
+	&.display-list  {
+		.product .field {
+			text-align:left;
+		}
+		.field-description {
+			color: #000;
+			font-size: 100%; 
+		}
+		.field-option {
+			display:block;
+			float:left;
+			margin:20px 10px 10px 0;
+		}
+		.field-quantity {margin:20px 10px 10px 0;}
+	}
+}
+
+
+/*  FOOTER
+/////////////////////////////////////////////////////////  */
+
+
+footer {
+	
+	min-height:85px;
+	height: auto !important;
+	height: 85px;
+	text-align: center;
+	margin-top:10px;
+	
+
+	nav {
+		
+		ul li {
+ 	 		display: inline-block;
+	  		float: left;
+	  		margin-right: 15px;
+			 
+			a {
+				font-size:11px;
+				text-align:center;
+				.nodeco;
+				.bold;
+				color:@dk-gray; /* footer nav link color */
+				&:hover {color:@purple;.nodeco;/* footer nav link hover */} 
+			}
+		}
+	}
+
+	.copyright p {
+		font-size:11px;
+		line-height:11px;
+		text-align:right;
+		margin: 7px 0 0;
+		.bold;
+		color:@dk-gray;
+		a {color:@purple;/* footer link color */} 
+		a:hover {color:@dk-purple; .nodeco;/* footer link hover */} 
+	}
+	
+	.social-icons {
+		float: left;
+		margin: 0;
+		
+		img, a img {
+			border:0;
+			cursor:pointer;
+			width:20px;
+			height:20px; 
+			opacity:1; 
+			float:left; 
+			margin: 1px 5px 0 0;
+			&:hover {opacity:.8;} 
+		}
+	}	
+}
+
+
+
+
+
+
+/*  IE FIXES
+ /////////////////////////////////////////////////////////  */
+
+
+.ie8 {
+	img {max-width:none; width:100%;}
+}
+.ie7 .slideshow-control-nav {bottom:20px;}
+
+
+
+
+
+
+
+/* MEDIA QUERIES  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+
+
+
+/* Sizes up text in larger windows */
+@media (min-width: 1200px) {
+	.content{
+		font-size:1.3em;
+		p {line-height:1.6em;padding:0 0 1.4em;}
+	}
+/* end media query*/} 
+
+
+
+
+
+/* Larger Navs need resizing in desktops - enter your max width where it runs into the logo */
+@media (max-width: 930px) and (min-width: 768px){
+	.navbar .nav > li > a {
+		font-size:12px;
+		padding: 6px 12px 7px;
+		margin-top:5px;
+	}
+/* end media query*/} 
+
+
+
+
+/* breakdance query*/
+@media only screen and (max-width: 767px) {
+	.screen {padding:2%;}
+	.screen-pad{padding:0;}
+	
+	.content{
+		font-size:1.2em;
+		p {line-height:1.4em;padding:0 0 1.2em;}
+	}
+	
+	header {
+		padding: 30px 0 10px;
+		
+		// site name text //
+		h1{
+			float: none;
+			text-align: left;
+			margin:2px 0 0;
+		}
+		
+		// header nav //	
+		nav {float:none;}
+		.nav-collapse ul.nav {margin:20px 0 10px}
+		ul.nav.menu-type-main > li > a,
+		ul.nav.cartinfo > li > a {
+			.bg-out; 
+			.white(30%,.3); /*main nav bg color*/
+			color:@lightest; /* main nav text color*/
+			text-shadow:none;
+		
+			&:hover, 
+			&.active,
+			&.active:hover,
+			&:active,
+			&:focus {
+				.bg-in; 
+				background:@purple; /*main nav bg hover*/ 
+				color:@lightest; /*main nav text hover*/
+			}
+		}
+		// mobile subnav styles //
+		ul.menu-type-main > li.has-children > a {margin-bottom:2px;}
+		ul.menu-type-main > li.has-children ul.menu-level-1 {
+			display:block;
+			position:relative;
+			top:0;left:0;
+			.corners(4px);
+			width:100%;
+			a {
+				display:block;
+				padding:9px 15px; 
+				color:@dk-gray; /* subnav text */ 
+				&:hover {color:@purple; /* subnav text hover*/ .nodeco;}
+			}
+		}
+	}
+	
+	.side {float:none;}
+	.main {float:none;}	
+	.side{
+		min-height:0;
+		.side-content{
+			padding:30px 12px 12px;
+			nav > ul{
+				margin:0;
+			}
+			.modules {display:none;}
+		}
+	}
+	.content{
+		padding:12px;
+		h1 {font-size:2em;}
+		h2 {font-size:1.5em;}
+		h3 {font-size:1.35em;}
+	}
+	.display-stack .article .display-image {
+		display:block;
+		float:none;
+		width:100%;
+		height:auto;
+		margin:0 0 0 0;
+	}
+	.display-stack .article .field-summary {
+		display:block;
+		float:none;
+		width:100%;
+		margin:1em 0 0;
+		height:auto;
+	}
+	.box {margin-bottom:10px!important; min-height:0;}
+	footer {
+		nav ul li {
+			float:none; 
+			a {font-size: .85em;}
+		}
+		.copyright p {text-align:center; margin:20px 0 0;}
+		.social-icons {
+			float: none;
+			margin: 0;
+			img, a img {
+				width: 40px;
+				height: 40px;
+				opacity:1;
+				float: none;
+				margin: 21px 5px 0 0;
+			}
+		}
+	}
+/* end media query*/} 
+
+
+
+
+
+
+/* Landscape phones and down */
+@media (max-width: 550px) {
+
+	.c-pager {
+		left: 10px;
+	}
+	.imageleft img, img.imageleft,
+	.imageright img, img.imageright {
+		float: none;
+		height: auto;
+		margin: 0 0 25px;
+		padding-right: 0px;
+		padding-left: 0px;
+		width: 100%;
+		border-right: none;
+		border-left: none;
+	}
+	.slideshow.displaystyle-lightbox .slideshow-image, 
+	.slideshow.displaystyle-gallery .slideshow-image {
+		margin: 2.5%;
+		width: 45%;
+		img {width:100%;}
+	}
+
+/* end media query*/} 

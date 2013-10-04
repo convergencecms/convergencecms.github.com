@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+
+<title><@site field="name" /@> | <@page field="name" /@></title>
+
+<!-- Mobile Specific Metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<script type="text/javascript" src="//use.typekit.net/zbe1tie.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<script src="js/site.js"></script>
+
+
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/cart.css" rel="stylesheet" type="text/css" />
+
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="css/images/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="">
+<link rel="apple-touch-icon" sizes="72x72" href="">
+<link rel="apple-touch-icon" sizes="114x114" href="">
+
+<!--[if lt IE 9]>
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+</head>
+
+<body class="page-<@pageurl/@>">
+<header>
+	<div class="container responsive">
+    	<div class="left">
+			<h1><a href="./"><@site field="name" /@></a></h1>
+        </div>
+        <div class="site-nav">
+			<nav class="navbar">
+                 <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+        		<div class="nav-collapse collapse">
+                	<@menu type="mainmenu" showchildren="true" hidehome="true" class="nav nav-pills"/@>
+                    <ul class="menu nav nav-pills cartinfo fc_minicart"><li><@cart field="shortinfo"/@></li></ul>
+                </div>
+        	    <div class="cl"></div>
+			</nav>
+        </div>
+        <div class="cl"></div>
+	</div>
+</header>
+
+
+<div class="container responsive screen">

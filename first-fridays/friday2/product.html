@@ -1,0 +1,32 @@
+<@include path="include/header.html"/@>
+
+<!-- MAIN -->
+<div class="twelve columns main">
+  <div class="content bb-two-col bb-equal-cols">
+    <div class="bb-col">
+      <@product field="images"/@>
+    </div>
+    <div class="bb-col">
+      <@product field="defaults"/@>
+    </div>
+    <div class="cl"></div>
+    <@product field="reviews"/@>
+	<!-- done -->
+  </div>
+  <div class="cl"></div>
+</div>
+
+<!-- SIDE -->
+
+<div class="four columns side">
+  <div class="side-content">
+    <nav>
+      <@menu type="category"/@>
+    </nav>
+    <@modules id="sidebar" global="true"/@>
+  </div>
+</div>
+
+
+
+<@include path="include/footer.html"/@>
