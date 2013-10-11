@@ -1,0 +1,172 @@
+/* BODYBUILDER GRID SYSTEM ///////////////////////////////////////////////////////////////////////////////// 
+
+Copyright 2013 @mtrozzo & @thatericsmith
+*/
+.bb-container {
+  padding: 2.5% 5%;
+}
+.bb-col,
+.bb-side-col,
+.bb-main-col {
+  float: left;
+}
+.bb-four-col {
+  padding: 0 0%;
+}
+.bb-four-col .bb-side-col {
+  width: 16.66666%;
+  margin-right: 3.7037%;
+}
+.bb-four-col .bb-main-col {
+  width: 79.63%;
+}
+.bb-four-col .bb-main-col .bb-col {
+  width: 30.233%;
+  margin-right: 4.651%;
+}
+.bb-four-col .bb-main-col .bb-col:nth-child(3n) {
+  margin-right: 0;
+}
+.bb-four-col.bb-equal-cols .bb-side-col,
+.bb-four-col.bb-equal-cols .bb-col {
+  width: 22.2222%;
+  margin-right: 3.7037%;
+}
+.bb-four-col.bb-equal-cols .bb-col:nth-child(4n) {
+  margin-right: 0;
+}
+.bb-four-col.bb-equal-cols .bb-main-col {
+  width: 74.07%;
+}
+.bb-four-col.bb-equal-cols .bb-main-col .bb-col {
+  width: 30.233%;
+  margin-right: 4.651%;
+}
+.bb-four-col.bb-equal-cols .bb-main-col .bb-col:nth-child(3n) {
+  margin-right: 0;
+}
+.bb-three-col {
+  padding: 0 1%;
+}
+.bb-three-col .bb-side-col {
+  width: 22.7273%;
+  margin-right: 4.5455%;
+}
+.bb-three-col .bb-main-col {
+  width: 72.72727272%;
+}
+.bb-three-col .bb-main-col .bb-col {
+  width: 46.875%;
+  margin-right: 6.25%;
+}
+.bb-three-col .bb-main-col .bb-col:nth-child(2n) {
+  margin-right: 0;
+}
+.bb-three-col.bb-equal-cols .bb-col {
+  width: 30.3030%;
+  margin-right: 4.5455%;
+}
+.bb-three-col.bb-equal-cols .bb-col:nth-child(3n) {
+  margin-right: 0;
+}
+.bb-two-col {
+  padding: 0 3%;
+}
+.bb-two-col .bb-side-col {
+  width: 23.53%;
+  margin-right: 5.8824%;
+}
+.bb-two-col .bb-main-col {
+  width: 70.5882%;
+}
+.bb-two-col.bb-equal-cols .bb-col {
+  width: 47.0588%;
+  margin-right: 5.8824%;
+}
+.bb-two-col.bb-equal-cols .bb-col:nth-child(2n) {
+  margin-right: 0;
+}
+.bb-one-col {
+  padding: 0 5%;
+}
+.bb-one-col .bb-col,
+.bb-one-col .bb-main-col {
+  width: auto;
+  margin-right: 0;
+  float: none;
+}
+@media only screen and (min-width: 1025px) {
+  .container.responsive .bb-one-col,
+  .container.responsive .bb-two-col .bb-main-col {
+    font-size: 1.5em;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .container.responsive {
+    /* on 3 and 4 col, cols inside the main col should go to full width */
+  
+  }
+  .container.responsive .bb-four-col {
+    padding: 0 1%;
+  }
+  .container.responsive .bb-four-col .bb-side-col {
+    width: 22.7273%;
+    margin-right: 4.5455%;
+  }
+  .container.responsive .bb-four-col .bb-main-col {
+    width: 72.72727272%;
+  }
+  .container.responsive .bb-four-col .bb-main-col .bb-col {
+    width: 46.875%;
+    margin-right: 6.25%;
+  }
+  .container.responsive .bb-four-col .bb-main-col .bb-col:nth-child(2n) {
+    margin-right: 0;
+  }
+  .container.responsive .bb-four-col.bb-equal-cols .bb-col {
+    width: 30.3030%;
+    margin-right: 4.5455%;
+  }
+  .container.responsive .bb-four-col.bb-equal-cols .bb-col:nth-child(3n) {
+    margin-right: 0;
+  }
+  .container.responsive .bb-four-col .display-grid .display-item {
+    width: 46.875%;
+    margin-right: 6.25% !important;
+    clear: none!important;
+  }
+  .container.responsive .bb-four-col .display-grid .display-item:nth-child(2n) {
+    margin-right: 0!important;
+  }
+  .container.responsive .bb-four-col .display-grid .display-item:nth-child(2n+1) {
+    clear: both!important;
+  }
+}
+@media only screen and (max-width: 499px) {
+  .container.responsive {
+    /* all cols should go to full width */
+  
+  }
+  .container.responsive .bb-four-col,
+  .container.responsive .bb-three-col,
+  .container.responsive .bb-two-col,
+  .container.responsive .bb-one-col {
+    padding: 0 5%;
+  }
+  .container.responsive .bb-four-col .bb-side-col,
+  .container.responsive .bb-three-col .bb-side-col,
+  .container.responsive .bb-two-col .bb-side-col,
+  .container.responsive .bb-one-col .bb-side-col,
+  .container.responsive .bb-four-col .bb-col,
+  .container.responsive .bb-three-col .bb-col,
+  .container.responsive .bb-two-col .bb-col,
+  .container.responsive .bb-one-col .bb-col,
+  .container.responsive .bb-four-col .bb-main-col,
+  .container.responsive .bb-three-col .bb-main-col,
+  .container.responsive .bb-two-col .bb-main-col,
+  .container.responsive .bb-one-col .bb-main-col {
+    width: auto!important;
+    margin-right: 0!important;
+    float: none!important;
+  }
+}
