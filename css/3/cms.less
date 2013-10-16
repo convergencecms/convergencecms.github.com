@@ -1051,54 +1051,41 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
 
 
 
-
-
-
-
-
-
-
 /* BOOTSTRAP Media Queries
 ================================================== */
 
-// Media queries breakpoints
-// --------------------------------------------------
 
-// Extra small screen / phone
-@screen-xs:                  480px;
-@screen-phone:               @screen-xs;
-
-// Small screen / tablet
-@screen-sm:                  768px;
-@screen-tablet:              @screen-sm;
-
-// Medium screen / desktop
-@screen-md:                  992px;
-@screen-desktop:             @screen-md;
-
-// Large screen / wide desktop
-@screen-lg:                  1200px;
-@screen-lg-desktop:          @screen-lg;
-
-
-
-/* Large devices (large desktops, 1200px and up) */
-@media (min-width: @screen-lg) {
+/* Large devices (large desktops, 1200px and up - screen-lg) */
+@media (min-width: 1200px) {
 	body {
 		font-size:20px;
 	}
+	.alpha-lg {padding-left:0!important;}
+	.omega-lg {padding-right:0!important;}
+	
+	
 } /* end media query*/
 
 
+/* Medium to Large */
+@media (max-width: 1199px) and (min-width: 993px){
+	.alpha-md {padding-left:0!important;}
+	.omega-md {padding-right:0!important;}
+} /* end media query*/
 
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: @screen-md) {  }
 
-
-
-/* Larger Navs need resizing in desktops - enter your max width where it runs into the logo */
-@media (max-width: 992px) and (min-width: @screen-sm){
+/* Medium devices (desktops, 993px and up - screen-md) */
+@media (min-width: 993px) {  
 	
+}
+
+/* ipad and small screens - sm to md */
+@media (max-width: 992px) and (min-width: 769px){
+	.product-images .flex-control-thumbs li img {
+		height: 40px;
+	}
+	.alpha-sm {padding-left:0!important;}
+	.omega-sm {padding-right:0!important;}
 } /* end media query*/
 
 
@@ -1107,9 +1094,35 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
 }
 
 
+/* Everything above breakdance - sm and up */
+@media (min-width: 769px) {
+	.alpha {padding-left:0!important;}
+	.omega {padding-right:0!important;}
+} /* end media query*/
+
+
 
 /* breakdance query*/
-@media only screen and (max-width: @screen-sm) {
+@media only screen and (max-width: 768px) {
+	
+	/* resets container padding to 15px */
+	.container {padding-left:15px!important; padding-right:15px!important;}
+	
+	/* resets alpha/omega to 15px */
+	.alpha {padding-left:15px!important;}
+	.omega {padding-right:15px!important;}
+	
+	/* resets columns to 15px */
+	.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, 
+	.col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12, .col-sm-1, .col-sm-2, 
+	.col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, 
+	.col-sm-10, .col-sm-11, .col-sm-12, .col-md-1, .col-md-2, .col-md-3, .col-md-4, 
+	.col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, 
+	.col-md-12, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, 
+	.col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
+		padding-left:15px!important; padding-right:15px!important;
+	}
+	
 	header {
 		// header nav //	
 		.navbar-collapse.in {
@@ -1163,7 +1176,7 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
 
 
 /* Landscape phones and down */
-@media (max-width: @screen-xs) {
+@media (max-width: 480px) {
 	
 	.container {
 		/* grid goes to 2 per row */
