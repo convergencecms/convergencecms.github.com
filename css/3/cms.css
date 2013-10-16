@@ -6854,7 +6854,7 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
   .container {
     max-width: none;
     width: 90%;
-    /* makes BS grid -sm and -md one fluid step */
+    /* makes TB3 grid -sm and -md one fluid step */
   }
 }
 /* Everything above breakdance - sm and up */
