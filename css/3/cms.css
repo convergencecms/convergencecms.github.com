@@ -486,6 +486,10 @@ label.error,
 a.secondary-action {
   font-size: .7em;
 }
+.form-group h4,
+.control-group h4 {
+  padding: 2em 0 0;
+}
 /* MENUS   
 ///////////////////////////////////////////////////////////////////////////////// */
 ul.menu,
