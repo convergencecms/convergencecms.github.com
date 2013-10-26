@@ -1031,20 +1031,20 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
   body {
     font-size: 20px;
   }
-  .alpha-lg {
+  .g0l-lg {
     padding-left: 0!important;
   }
-  .omega-lg {
+  .g0r-lg {
     padding-right: 0!important;
   }
 }
 /* end media query*/
 /* Medium to Large */
 @media (max-width: 1199px) and (min-width: 993px) {
-  .alpha-md {
+  .g0l-md {
     padding-left: 0!important;
   }
-  .omega-md {
+  .g0r-md {
     padding-right: 0!important;
   }
 }
@@ -1058,10 +1058,10 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
   .product-images .flex-control-thumbs li img {
     height: 40px;
   }
-  .alpha-sm {
+  .g0l-sm {
     padding-left: 0!important;
   }
-  .omega-sm {
+  .g0r-sm {
     padding-right: 0!important;
   }
 }
@@ -1075,10 +1075,10 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
 }
 /* Everything above breakdance - sm and up */
 @media (min-width: 769px) {
-  .alpha {
+  .g0l {
     padding-left: 0!important;
   }
-  .omega {
+  .g0r {
     padding-right: 0!important;
   }
 }
@@ -1091,10 +1091,10 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
     padding-right: 15px!important;
   }
   /* resets alpha/omega to 15px */
-  .alpha {
+  .g0l {
     padding-left: 15px!important;
   }
-  .omega {
+  .g0r {
     padding-right: 15px!important;
   }
   /* resets columns to 15px */
