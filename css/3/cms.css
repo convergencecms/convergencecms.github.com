@@ -479,6 +479,14 @@ ul.filter-list {
 }
 /* Forms  
  ///////////////////////////////////////////////////////////////////////////////// */
+input,
+select,
+textarea {
+  max-width: 300px;
+}
+textarea.form-control {
+  min-height: 100px;
+}
 label.error,
 .form-item-required-symbol {
   color: #ee0000 !important;
