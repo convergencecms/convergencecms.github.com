@@ -1050,6 +1050,8 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
   body {
     font-size: 20px;
   }
+  /* sets large screen container width */
+  /* .container {max-width:1200px; width:auto;} */
   .g0l-lg {
     padding-left: 0!important;
   }
@@ -1070,10 +1072,23 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
 /* end media query*/
 /* Medium devices (desktops, 993px and up - screen-md) */
 @media (min-width: 993px) {
-  
+  /* sets container to 1024px - container and col padding will determine margin */
+  .container {
+    max-width: 1024px;
+    width: auto;
+  }
 }
 /* ipad and small screens - sm to md */
 @media (max-width: 992px) and (min-width: 769px) {
+  /*  customizes container width - card class lessens container width to allow for background */
+  .container {
+    max-width: 970px;
+    width: auto;
+  }
+  .container.card {
+    max-width: 93%;
+    width: auto;
+  }
   .product-images .flex-control-thumbs li img {
     height: 40px;
   }
@@ -1085,15 +1100,8 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
   }
 }
 /* end media query*/
-@media (min-width: 769px) and (max-width: 1199px) {
-  .container {
-    max-width: none;
-    width: 90%;
-    /* makes TB3 grid -sm and -md one fluid step */
-  }
-}
 /* Everything above breakdance - sm and up */
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   .g0l {
     padding-left: 0!important;
   }
@@ -1103,7 +1111,12 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
 }
 /* end media query*/
 /* breakdance query*/
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
+  /* card class lessens container width to allow for background */
+  .container.card {
+    max-width: 93%;
+    width: auto;
+  }
   /* resets container padding to 15px */
   .container {
     padding-left: 15px!important;
@@ -1203,6 +1216,11 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
 }
 /* end media query*//* Landscape phones and down */
 @media (max-width: 480px) {
+  /* sets container background to 100% */
+  .container.card {
+    max-width: 100%;
+    width: auto;
+  }
   .container {
     /* grid goes to 2 per row */
   
