@@ -1050,6 +1050,9 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
   padding-top: 0;
   line-height: 1;
 }
+.user-personal-form .control-group-userslug {
+  display: none;
+}
 /*  IE FIXES
  /////////////////////////////////////////////////////////  */
 .ie8 img {
