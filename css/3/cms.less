@@ -140,7 +140,9 @@ img {
 
 
 
-body {font-size:18px; /* We feel 18px is a better base font size, and all of our typography rules will be based on this size */ }
+body {
+	font-size:18px; /* We feel 18px is a better base font size, and all of our typography rules will be based on this size */
+}
 h1,
 h2,
 h3,
@@ -192,7 +194,28 @@ h6 {
   letter-spacing:.08em;
   padding:.28em 0;
 }
-p {line-height:1.6em; padding:0 0 1.4em;}
+
+blockquote{
+	margin:0;
+	border:none;
+	font-size:2em; 
+	padding:0 0 0.58em; 
+	line-height:1.125;
+}
+
+p+blockquote{
+	padding:0 0 .56em;
+}
+
+p {
+	line-height:1.6em; 
+	margin:0; 
+	padding:0 0 1.15em;
+}
+
+label,input{
+	font-size:1em;
+}
 
 
 
@@ -367,8 +390,8 @@ a.back-link {
 .posts-list{
 	.display-item {
 		border-bottom: 1px solid @lightborder;
-		margin-bottom: @bottomgutter * 2;
-		padding-bottom: @bottomgutter * 2;
+		margin-bottom: 2em;
+		padding-bottom: 2em;
 	}
 	&.display-grid{
 		font-size:85%;
@@ -426,9 +449,8 @@ a.back-link {
 }
 .display-stack,
 .post-detail-view{
-	.field-body,
 	.field-summary{
-		margin:1em 0 0;
+		margin:0;
 	}
 	.field-name {
 		font-size: @h1base;
@@ -588,7 +610,6 @@ a.secondary-action {font-size:.7em;}
 		margin-left: -10px;
 	}
 }
-.alert {background:#ffd5d5; border:1px solid #C00;}
 
 /* MENUS   
 ///////////////////////////////////////////////////////////////////////////////// */
