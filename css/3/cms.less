@@ -1148,11 +1148,15 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
 /* breakdance query*/
 @media only screen and (max-width: 767px) {
 	
-	/* card class lessens container width to allow for background */
-	.container.card {max-width:93%; width:auto;}
-	
 	/* resets container padding to 15px */
 	.container {padding-left:15px!important; padding-right:15px!important;}
+	
+	/* card class makes container 100% width and eliminates body bg */
+	.container.card {
+		max-width:100%; width:auto; 
+		padding-left:0px!important; padding-right:0px!important;
+		.content {padding-left:30px!important; padding-right:30px!important;}
+	}
 	
 	/* resets alpha/omega to 15px */
 	.g0l {padding-left:15px!important;}
