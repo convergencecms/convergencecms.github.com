@@ -518,6 +518,7 @@ a.secondary-action {
 .checkbox input[type="checkbox"] {
   margin-top: 8px;
   margin-left: -10px;
+  width: 20px;
 }
 /* MENUS   
 ///////////////////////////////////////////////////////////////////////////////// */
@@ -1128,15 +1129,21 @@ table.account-subscription-list.modifying-subscription tr.this-row a#undo-modifi
 /* end media query*/
 /* breakdance query*/
 @media only screen and (max-width: 767px) {
-  /* card class lessens container width to allow for background */
-  .container.card {
-    max-width: 93%;
-    width: auto;
-  }
   /* resets container padding to 15px */
   .container {
     padding-left: 15px!important;
     padding-right: 15px!important;
+  }
+  /* card class makes container 100% width and eliminates body bg */
+  .container.card {
+    max-width: 100%;
+    width: auto;
+    padding-left: 0px!important;
+    padding-right: 0px!important;
+  }
+  .container.card .content {
+    padding-left: 30px!important;
+    padding-right: 30px!important;
   }
   /* resets alpha/omega to 15px */
   .g0l {
